@@ -23,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
   const client = createClient();
   const page = await client.getByUID("page", "home").catch(() => notFound());
+  console.log("page", page);
 
   return <SliceZone slices={page.data.slices} components={components} />;
 }
