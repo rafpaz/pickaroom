@@ -7,6 +7,8 @@ import { PrismicNextLink, PrismicPreview } from "@prismicio/next";
 
 import { createClient, repositoryName } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
+import { Providers } from "./providers";
+import jsonHero from "@/__heplers/jsonHero";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,9 +22,11 @@ export default async function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="overflow-x-hidden antialiased">
-        <Header />
-        {children}
-        <PrismicPreview repositoryName={repositoryName} />
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+          <Header />
+          {children}
+          <PrismicPreview repositoryName={repositoryName} />
+        </Providers>
       </body>
     </html>
   );
