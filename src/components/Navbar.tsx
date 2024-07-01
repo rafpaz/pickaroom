@@ -11,7 +11,7 @@ import {
 } from "@nextui-org/navbar";
 import { ChevronDown } from "lucide-react";
 import { PrismicNextLink } from "@prismicio/next";
-import { AcmeLogo } from "./AcmeLogo";
+import { Logo } from "./Logo";
 import {
   Dropdown,
   DropdownItem,
@@ -44,8 +44,7 @@ export default function CustomNavbar() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <AcmeLogo />
-          <p className="font-bold text-inherit">ACME</p>
+          <Logo />
         </NavbarBrand>
       </NavbarContent>
 
@@ -117,11 +116,6 @@ export default function CustomNavbar() {
           <PrismicNextLink color="foreground" href="#">
             Integrations
           </PrismicNextLink>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <PrismicNextLink href="#">Login</PrismicNextLink>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>

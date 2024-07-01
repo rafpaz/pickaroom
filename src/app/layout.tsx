@@ -1,23 +1,10 @@
 import "./globals.css";
 
 import { Inter } from "next/font/google";
-import { asText } from "@prismicio/client";
-import { PrismicText } from "@prismicio/react";
-import { PrismicNextLink, PrismicPreview } from "@prismicio/next";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-} from "@nextui-org/navbar";
-
+import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
 import { Providers } from "./providers";
-import { AcmeLogo } from "@/components/AcmeLogo";
 import CustomNavbar from "@/components/Navbar";
 
 const inter = Inter({
