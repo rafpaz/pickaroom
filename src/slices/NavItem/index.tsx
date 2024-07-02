@@ -51,9 +51,14 @@ const NavItem = ({ slice }: NavItemProps): JSX.Element => {
             base: "gap-4",
           }}
         >
-          {slice.primary.menu_links.map((link, index) => (
-            <DropdownItem key={asText(link.label)}>
-              <PrismicText field={link.label} />
+          {slice.primary.menu_links.map((link) => (
+            <DropdownItem
+              key={asText(link.label)}
+              textValue={asText(link.label)}
+            >
+              <PrismicNextLink field={link.link}>
+                <PrismicText field={link.label} />
+              </PrismicNextLink>
             </DropdownItem>
           ))}
         </DropdownMenu>
