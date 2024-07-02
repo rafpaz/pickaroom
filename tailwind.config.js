@@ -1,3 +1,5 @@
+const { nextui } = require("@nextui-org/theme");
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,5 +14,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [require("@tailwindcss/aspect-ratio")],
+  plugins: [require("@tailwindcss/aspect-ratio"), nextui()],
 };

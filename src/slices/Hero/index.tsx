@@ -27,6 +27,7 @@ const Hero = ({ slice }: HeroProps) => {
           alt=""
           fill={true}
           className="pointer-events-none select-none object-cover opacity-40"
+          priority
         />
       )}
       <Bounded yPadding="lg" className="relative">
