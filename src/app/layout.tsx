@@ -31,13 +31,12 @@ export default async function RootLayout({
 
 async function Header() {
   const client = createClient();
-  const settings = await client.getSingle("settings");
-  const navigation = await client.getSingle("navigation");
+  const navigation = await client.getSingle("global_nav");
 
   return (
     <Bounded as="header" yPadding="sm">
       <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3 leading-none">
-        <CustomNavbar />
+        <CustomNavbar {...navigation} />
       </div>
     </Bounded>
   );

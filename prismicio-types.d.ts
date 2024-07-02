@@ -4,6 +4,40 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type GlobalNavDocumentDataSlicesSlice = NavItemSlice;
+
+/**
+ * Content for Global Nav documents
+ */
+interface GlobalNavDocumentData {
+  /**
+   * Slice Zone field in *Global Nav*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: global_nav.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<GlobalNavDocumentDataSlicesSlice>;
+}
+
+/**
+ * Global Nav document from Prismic
+ *
+ * - **API ID**: `global_nav`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type GlobalNavDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<GlobalNavDocumentData>,
+    "global_nav",
+    Lang
+  >;
+
 type HomepageDocumentDataSlicesSlice = never;
 
 /**
@@ -88,63 +122,6 @@ export type HomepageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
     Simplify<HomepageDocumentData>,
     "homepage",
-    Lang
-  >;
-
-/**
- * Item in *Navigation → Links*
- */
-export interface NavigationDocumentDataLinksItem {
-  /**
-   * Label field in *Navigation → Links*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Optional - Label for the link
-   * - **API ID Path**: navigation.links[].label
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  label: prismic.TitleField;
-
-  /**
-   * Link field in *Navigation → Links*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link for navigation item
-   * - **API ID Path**: navigation.links[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Content for Navigation documents
- */
-interface NavigationDocumentData {
-  /**
-   * Links field in *Navigation*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.links[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  links: prismic.GroupField<Simplify<NavigationDocumentDataLinksItem>>;
-}
-
-/**
- * Navigation document from Prismic
- *
- * - **API ID**: `navigation`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type NavigationDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<NavigationDocumentData>,
-    "navigation",
     Lang
   >;
 
@@ -270,8 +247,8 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | GlobalNavDocument
   | HomepageDocument
-  | NavigationDocument
   | PageDocument
   | SettingsDocument;
 
@@ -515,6 +492,126 @@ type ImageCardsSliceVariation = ImageCardsSliceDefault;
 export type ImageCardsSlice = prismic.SharedSlice<
   "image_cards",
   ImageCardsSliceVariation
+>;
+
+/**
+ * Item in *NavItem → Menu → Primary → Menu Links*
+ */
+export interface NavItemSliceMenuPrimaryMenuLinksItem {
+  /**
+   * label field in *NavItem → Menu → Primary → Menu Links*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_item.menu.primary.menu_links[].label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  label: prismic.TitleField;
+
+  /**
+   * link field in *NavItem → Menu → Primary → Menu Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_item.menu.primary.menu_links[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *NavItem → Default → Primary*
+ */
+export interface NavItemSliceDefaultPrimary {
+  /**
+   * label field in *NavItem → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_item.default.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  label: prismic.RichTextField;
+
+  /**
+   * link field in *NavItem → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_item.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for NavItem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavItemSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavItemSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *NavItem → Menu → Primary*
+ */
+export interface NavItemSliceMenuPrimary {
+  /**
+   * Label field in *NavItem → Menu → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_item.menu.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  label: prismic.RichTextField;
+
+  /**
+   * Menu Links field in *NavItem → Menu → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_item.menu.primary.menu_links[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  menu_links: prismic.GroupField<
+    Simplify<NavItemSliceMenuPrimaryMenuLinksItem>
+  >;
+}
+
+/**
+ * Menu variation for NavItem Slice
+ *
+ * - **API ID**: `menu`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavItemSliceMenu = prismic.SharedSliceVariation<
+  "menu",
+  Simplify<NavItemSliceMenuPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NavItem*
+ */
+type NavItemSliceVariation = NavItemSliceDefault | NavItemSliceMenu;
+
+/**
+ * NavItem Shared Slice
+ *
+ * - **API ID**: `nav_item`
+ * - **Description**: NavItem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavItemSlice = prismic.SharedSlice<
+  "nav_item",
+  NavItemSliceVariation
 >;
 
 /**
@@ -764,12 +861,12 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      GlobalNavDocument,
+      GlobalNavDocumentData,
+      GlobalNavDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
-      NavigationDocument,
-      NavigationDocumentData,
-      NavigationDocumentDataLinksItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -791,6 +888,13 @@ declare module "@prismicio/client" {
       ImageCardsSliceDefaultPrimary,
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
+      NavItemSlice,
+      NavItemSliceDefaultPrimary,
+      NavItemSliceMenuPrimaryMenuLinksItem,
+      NavItemSliceMenuPrimary,
+      NavItemSliceVariation,
+      NavItemSliceDefault,
+      NavItemSliceMenu,
       QuoteSlice,
       QuoteSliceDefaultPrimary,
       QuoteSliceVariation,
