@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -13,9 +13,19 @@ import { Logo } from "./Logo";
 import { SliceZone } from "@prismicio/react";
 import { GlobalNavDocument } from "../../prismicio-types";
 import { components } from "@/slices";
+import clsx from "clsx";
 
 export default function CustomNavbar({ data }: GlobalNavDocument) {
+  const [isOnTop, setIsOnTop] = React.useState(true);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsOnTop(window.scrollY < 30);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const menuItems = [
     "Profile",
@@ -33,8 +43,11 @@ export default function CustomNavbar({ data }: GlobalNavDocument) {
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-opacity-0 absolute top-4"
       isBlurred={false}
+      className={clsx(
+        "top-0 fixed transition-colors bg-custom-gradient backdrop-blur-[1px]"
+      )}
+      height={"124px"}
     >
       <NavbarContent>
         <NavbarMenuToggle

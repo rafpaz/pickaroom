@@ -12,7 +12,12 @@ module.exports = {
     fontFamily: {
       sans: 'var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(180deg, #3f3e3e, rgba(92, 92, 92, 0) 89.06%)",
+      },
+    },
   },
   plugins: [require("@tailwindcss/aspect-ratio"), nextui()],
 };
