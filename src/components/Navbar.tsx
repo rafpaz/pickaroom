@@ -4,21 +4,12 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { ChevronDown } from "lucide-react";
 import { PrismicNextLink } from "@prismicio/next";
 import { Logo } from "./Logo";
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-} from "@nextui-org/dropdown";
-import { Button } from "@nextui-org/button";
 import { SliceZone } from "@prismicio/react";
 import { GlobalNavDocument } from "../../prismicio-types";
 import { components } from "@/slices";
@@ -40,7 +31,11 @@ export default function CustomNavbar({ data }: GlobalNavDocument) {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      className="bg-opacity-0 absolute top-4"
+      isBlurred={false}
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
