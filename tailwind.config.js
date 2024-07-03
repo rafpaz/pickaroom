@@ -15,7 +15,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "custom-gradient":
-          "linear-gradient(180deg, #3f3e3e, rgba(92, 92, 92, 0) 89.06%)",
+          "linear-gradient(180deg, rgba(63,62,62, 0.7), rgba(92, 92, 92, 0) 89.06%)",
       },
     },
   },
