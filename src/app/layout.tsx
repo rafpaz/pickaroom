@@ -5,6 +5,8 @@ import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
 import { Providers } from "./providers";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import CustomNavbar from "@/components/Navbar";
 
 const inter = Inter({
@@ -23,6 +25,8 @@ export default async function RootLayout({
           <Header />
           {children}
           <PrismicPreview repositoryName={repositoryName} />
+          <SpeedInsights />
+          <Analytics />
         </Providers>
       </body>
     </html>
