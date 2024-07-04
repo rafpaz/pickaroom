@@ -46,6 +46,65 @@
       },
       "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "twoButtons",
+      "name": "Two Buttons",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Hero",
+      "primary": {
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading1,strong,em"
+          }
+        },
+        "backgroundImage": {
+          "type": "Image",
+          "config": {
+            "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "leftButton": {
+          "type": "Link",
+          "config": {
+            "label": "Left Button",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "leftButtonText": {
+          "type": "Text",
+          "config": {
+            "label": "Left Button Text",
+            "placeholder": ""
+          }
+        },
+        "right_button": {
+          "type": "Link",
+          "config": {
+            "label": "Right Button",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "right_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Right Button Text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]
 }
