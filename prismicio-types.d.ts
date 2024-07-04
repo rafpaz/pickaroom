@@ -311,9 +311,87 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Two Buttons → Primary*
+ */
+export interface HeroSliceTwoButtonsPrimary {
+  /**
+   * Text field in *Hero → Two Buttons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.twoButtons.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Background Image field in *Hero → Two Buttons → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.twoButtons.primary.backgroundImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  backgroundImage: prismic.ImageField<never>;
+
+  /**
+   * Left Button field in *Hero → Two Buttons → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.twoButtons.primary.leftButton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  leftButton: prismic.LinkField;
+
+  /**
+   * Left Button Text field in *Hero → Two Buttons → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.twoButtons.primary.leftButtonText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  leftButtonText: prismic.KeyTextField;
+
+  /**
+   * Right Button field in *Hero → Two Buttons → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.twoButtons.primary.right_button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  right_button: prismic.LinkField;
+
+  /**
+   * Right Button Text field in *Hero → Two Buttons → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.twoButtons.primary.right_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  right_button_text: prismic.KeyTextField;
+}
+
+/**
+ * Two Buttons variation for Hero Slice
+ *
+ * - **API ID**: `twoButtons`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceTwoButtons = prismic.SharedSliceVariation<
+  "twoButtons",
+  Simplify<HeroSliceTwoButtonsPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault;
+type HeroSliceVariation = HeroSliceDefault | HeroSliceTwoButtons;
 
 /**
  * Hero Shared Slice
@@ -875,8 +953,10 @@ declare module "@prismicio/client" {
       AllDocumentTypes,
       HeroSlice,
       HeroSliceDefaultPrimary,
+      HeroSliceTwoButtonsPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HeroSliceTwoButtons,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceBannerPrimary,

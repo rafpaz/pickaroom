@@ -4,27 +4,21 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { ChevronDown } from "lucide-react";
 import { PrismicNextLink } from "@prismicio/next";
 import { Logo } from "./Logo";
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-} from "@nextui-org/dropdown";
-import { Button } from "@nextui-org/button";
 import { SliceZone } from "@prismicio/react";
 import { GlobalNavDocument } from "../../prismicio-types";
 import { components } from "@/slices";
+import useScrollDirection from "./__hooks__/useScrollDirection";
+import clsx from "clsx";
 
 export default function CustomNavbar({ data }: GlobalNavDocument) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const scrollDirection = useScrollDirection();
 
   const menuItems = [
     "Profile",
@@ -40,7 +34,15 @@ export default function CustomNavbar({ data }: GlobalNavDocument) {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      isBlurred={false}
+      className={clsx(
+        "top-0 fixed transition-opacity bg-custom-gradient backdrop-blur-[1px] duration-500",
+        scrollDirection === "down" && "opacity-0"
+      )}
+      height={"124px"}
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}

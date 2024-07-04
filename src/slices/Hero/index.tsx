@@ -38,13 +38,34 @@ const Hero = ({ slice }: HeroProps) => {
               components={components}
             />
           </div>
-          {isFilled.link(slice.primary.buttonLink) && (
-            <PrismicNextLink
-              field={slice.primary.buttonLink}
-              className="rounded bg-white px-5 py-3 font-medium text-slate-800"
-            >
-              {slice.primary.buttonText || "Learn More"}
-            </PrismicNextLink>
+          {slice.variation === "default" &&
+            isFilled.link(slice.primary.buttonLink) && (
+              <PrismicNextLink
+                field={slice.primary.buttonLink}
+                className="rounded bg-white px-5 py-3 font-medium text-slate-800"
+              >
+                {slice.primary.buttonText || "Learn More"}
+              </PrismicNextLink>
+            )}
+          {slice.variation === "twoButtons" && (
+            <div className="flex flex-col sm:flex-row gap-4">
+              {isFilled.link(slice.primary.leftButton) && (
+                <PrismicNextLink
+                  field={slice.primary.leftButton}
+                  className="rounded bg-white px-5 py-3 font-medium text-slate-800"
+                >
+                  {slice.primary.leftButtonText || "Learn More"}
+                </PrismicNextLink>
+              )}
+              {isFilled.link(slice.primary.right_button) && (
+                <PrismicNextLink
+                  field={slice.primary.right_button}
+                  className="rounded bg-white px-5 py-3 font-medium text-slate-800"
+                >
+                  {slice.primary.right_button_text || "Contact Us"}
+                </PrismicNextLink>
+              )}
+            </div>
           )}
         </div>
       </Bounded>

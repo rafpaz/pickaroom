@@ -38,10 +38,10 @@ async function Header() {
   const navigation = await client.getSingle("global_nav");
 
   return (
-    <Bounded as="header" yPadding="sm">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3 leading-none">
-        <CustomNavbar {...navigation} />
-      </div>
-    </Bounded>
+    // <Bounded as="header" yPadding="sm">
+    // <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3 leading-none">
+    <CustomNavbar {...navigation} />
+    // </div>
+    // </Bounded>
   );
 }
