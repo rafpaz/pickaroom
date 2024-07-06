@@ -6,7 +6,7 @@ import {
   DropdownTrigger,
 } from "@nextui-org/dropdown";
 import { NavbarItem } from "@nextui-org/navbar";
-import { Content, asText } from "@prismicio/client";
+import { Content, asLink, asText } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { ChevronDown } from "lucide-react";
@@ -32,7 +32,7 @@ const NavItem = ({ slice }: NavItemProps): JSX.Element => {
   if (slice.variation === "menu") {
     return (
       <Dropdown>
-        <NavbarItem className="text-white">
+        <NavbarItem>
           <DropdownTrigger>
             <Button
               className="p-0 text-medium bg-transparent data-[hover=true]:bg-transparent text-white"
@@ -55,10 +55,9 @@ const NavItem = ({ slice }: NavItemProps): JSX.Element => {
             <DropdownItem
               key={asText(link.label)}
               textValue={asText(link.label)}
+              href={asLink(link.link) ?? undefined}
             >
-              <PrismicNextLink field={link.link}>
-                <PrismicText field={link.label} />
-              </PrismicNextLink>
+              {asText(link.label)}
             </DropdownItem>
           ))}
         </DropdownMenu>

@@ -20,7 +20,7 @@ const Hero = ({ slice }: HeroProps) => {
   const backgroundImage = slice.primary.backgroundImage;
 
   return (
-    <section className="relative bg-slate-900 text-white">
+    <section className="relative bg-slate-900 text-white min-h-screen">
       {isFilled.image(backgroundImage) && (
         <PrismicNextImage
           field={backgroundImage}
@@ -32,12 +32,14 @@ const Hero = ({ slice }: HeroProps) => {
       )}
       <Bounded yPadding="lg" className="relative">
         <div className="grid justify-items-center gap-8">
-          <div className="max-w-2xl text-center">
-            <PrismicRichText
-              field={slice.primary.text}
-              components={components}
-            />
-          </div>
+          {slice.variation !== "empty" && (
+            <div className="max-w-2xl text-center">
+              <PrismicRichText
+                field={slice.primary.text}
+                components={components}
+              />
+            </div>
+          )}
           {slice.variation === "default" &&
             isFilled.link(slice.primary.buttonLink) && (
               <PrismicNextLink

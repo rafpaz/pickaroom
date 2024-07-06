@@ -389,9 +389,40 @@ export type HeroSliceTwoButtons = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Empty → Primary*
+ */
+export interface HeroSliceEmptyPrimary {
+  /**
+   * Background Image field in *Hero → Empty → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.empty.primary.backgroundImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  backgroundImage: prismic.ImageField<never>;
+}
+
+/**
+ * Empty variation for Hero Slice
+ *
+ * - **API ID**: `empty`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceEmpty = prismic.SharedSliceVariation<
+  "empty",
+  Simplify<HeroSliceEmptyPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault | HeroSliceTwoButtons;
+type HeroSliceVariation =
+  | HeroSliceDefault
+  | HeroSliceTwoButtons
+  | HeroSliceEmpty;
 
 /**
  * Hero Shared Slice
@@ -954,9 +985,11 @@ declare module "@prismicio/client" {
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceTwoButtonsPrimary,
+      HeroSliceEmptyPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceTwoButtons,
+      HeroSliceEmpty,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceBannerPrimary,

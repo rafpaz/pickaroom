@@ -8,6 +8,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
+import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import { PrismicNextLink } from "@prismicio/next";
 import { Logo } from "./Logo";
 import { SliceZone } from "@prismicio/react";
@@ -15,23 +16,11 @@ import { GlobalNavDocument } from "../../prismicio-types";
 import { components } from "@/slices";
 import useScrollDirection from "./__hooks__/useScrollDirection";
 import clsx from "clsx";
+import CustomNavbarMenu from "./CustomNavbarMenu";
 
 export default function CustomNavbar({ data }: GlobalNavDocument) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const scrollDirection = useScrollDirection();
-
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
 
   return (
     <Navbar
@@ -44,37 +33,19 @@ export default function CustomNavbar({ data }: GlobalNavDocument) {
       height={"124px"}
     >
       <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-        />
         <NavbarBrand>
           <Logo />
         </NavbarBrand>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden text-white"
+        />
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <SliceZone slices={data.slices} components={components} />
       </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <PrismicNextLink
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-              }
-              className="w-full"
-              href="#"
-            >
-              {item}
-            </PrismicNextLink>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
+      <CustomNavbarMenu slices={data.slices} />
     </Navbar>
   );
 }
