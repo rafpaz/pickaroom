@@ -26,11 +26,15 @@ const CustomNavbarMenu: React.FC<NavbarMenuItemProps> = ({ slices }) => {
                 title={asText(slice.primary.label)}
                 classNames={{
                   trigger: "p-0",
+                  titleWrapper: "flex-grow-0",
                   content: "px-4",
                 }}
               >
                 {slice.primary.menu_links.map((item, index) => (
-                  <NavbarMenuItem key={`${item.label}-${index}`}>
+                  <NavbarMenuItem
+                    key={`${item.label}-${index}`}
+                    className="mt-2"
+                  >
                     <PrismicNextLink
                       color={
                         index === 2

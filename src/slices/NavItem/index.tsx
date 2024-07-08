@@ -33,11 +33,11 @@ const NavItem = ({ slice }: NavItemProps): JSX.Element => {
     return (
       <Dropdown>
         <NavbarItem>
-          <DropdownTrigger>
+          <DropdownTrigger className="p-5">
             <Button
               className="p-0 text-medium bg-transparent data-[hover=true]:bg-transparent text-white antialiased"
               disableRipple
-              endContent={<ChevronDown size={20} />}
+              endContent={<ChevronDown size={16} />}
               radius="sm"
               variant="light"
             >
