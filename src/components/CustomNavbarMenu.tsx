@@ -20,9 +20,15 @@ const CustomNavbarMenu: React.FC<NavbarMenuItemProps> = ({ slices }) => {
             </PrismicNextLink>
           </NavbarMenuItem>
         ) : (
-          <NavbarMenuItem key={index}>
-            <Accordion>
-              <AccordionItem title={asText(slice.primary.label)}>
+          <NavbarMenuItem key={index} className="p-0">
+            <Accordion className="p-0">
+              <AccordionItem
+                title={asText(slice.primary.label)}
+                classNames={{
+                  trigger: "p-0",
+                  content: "px-4",
+                }}
+              >
                 {slice.primary.menu_links.map((item, index) => (
                   <NavbarMenuItem key={`${item.label}-${index}`}>
                     <PrismicNextLink
@@ -45,27 +51,6 @@ const CustomNavbarMenu: React.FC<NavbarMenuItemProps> = ({ slices }) => {
           </NavbarMenuItem>
         )
       )}
-      {/* <Accordion>
-        <AccordionItem title="BLA">
-          {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <PrismicNextLink
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === menuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                className="w-full"
-                href="#"
-              >
-                {item}
-              </PrismicNextLink>
-            </NavbarMenuItem>
-          ))}
-        </AccordionItem>
-      </Accordion> */}
     </NavbarMenu>
   );
 };
