@@ -18,6 +18,7 @@
     "@nextui-org/button": "^2.0.34",
     "@nextui-org/dropdown": "^2.1.26",
     "@nextui-org/navbar": "^2.0.33",
+    "@nextui-org/popover": "^2.1.24",
     "@nextui-org/system": "^2.2.2",
     "@nextui-org/theme": "^2.2.6",
     "@prismicio/client": "^7.6.0",
