@@ -1,5 +1,6 @@
 const { nextui } = require("@nextui-org/theme");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,6 +14,20 @@ module.exports = {
       sans: 'var(--font-poppins), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
     },
     extend: {
+      keyframes: {
+        slideInLeft: {
+          "0%": { transform: "translateX(-10%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideInTop: {
+          "0%": { transform: "translateY(-30%)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+      },
+      animation: {
+        slideInLeft: "slideInLeft 0.5s ease-in forwards",
+        slideInTop: "slideInTop 0.5s ease-in forwards",
+      },
       backgroundImage: {
         "custom-gradient":
           "linear-gradient(180deg, rgba(63,62,62, 0.7), rgba(92, 92, 92, 0) 89.06%)",

@@ -126,6 +126,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | GridSlice
   | HeroSlice
   | QuoteSlice
   | TextSlice
@@ -253,6 +254,93 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Item in *Grid → Default → Primary → items*
+ */
+export interface GridSliceDefaultPrimaryItemsItem {
+  /**
+   * image field in *Grid → Default → Primary → items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grid.default.primary.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * label field in *Grid → Default → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grid.default.primary.items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * description field in *Grid → Default → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grid.default.primary.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Grid → Default → Primary*
+ */
+export interface GridSliceDefaultPrimary {
+  /**
+   * Title field in *Grid → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grid.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * items field in *Grid → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grid.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<Simplify<GridSliceDefaultPrimaryItemsItem>>;
+}
+
+/**
+ * Default variation for Grid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<GridSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Grid*
+ */
+type GridSliceVariation = GridSliceDefault;
+
+/**
+ * Grid Shared Slice
+ *
+ * - **API ID**: `grid`
+ * - **Description**: Grid
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GridSlice = prismic.SharedSlice<"grid", GridSliceVariation>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -295,6 +383,20 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   backgroundImage: prismic.ImageField<never>;
+
+  /**
+   * Text Location field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Center
+   * - **API ID Path**: hero.default.primary.text_location
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_location: prismic.SelectField<
+    "Center" | "Center Right" | "Center Left" | "Bottom Left",
+    "filled"
+  >;
 }
 
 /**
@@ -982,6 +1084,11 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      GridSlice,
+      GridSliceDefaultPrimaryItemsItem,
+      GridSliceDefaultPrimary,
+      GridSliceVariation,
+      GridSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceTwoButtonsPrimary,

@@ -5,11 +5,7 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Accordion, AccordionItem } from "@nextui-org/accordion";
-import { PrismicNextLink } from "@prismicio/next";
 import { Logo } from "./Logo";
 import { SliceZone } from "@prismicio/react";
 import { GlobalNavDocument } from "../../prismicio-types";
@@ -26,6 +22,7 @@ export default function CustomNavbar({ data }: GlobalNavDocument) {
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       isBlurred={false}
+      maxWidth="xl"
       className={clsx(
         "top-0 fixed transition-opacity bg-custom-gradient backdrop-blur-[1px] duration-500",
         scrollDirection === "down" && "opacity-0"
