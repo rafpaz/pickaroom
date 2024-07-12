@@ -6,6 +6,8 @@ import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import clsx from "clsx";
+import SlideIn from "@/components/SlideIn";
+import ConditionalWrap from "@/components/ConditionalWrap";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -21,7 +23,7 @@ const Hero = ({ slice }: HeroProps) => {
   const backgroundImage = slice.primary.backgroundImage;
 
   return (
-    <section className="relative bg-slate-900 text-white min-h-screen">
+    <section className="relative min-h-screen">
       {isFilled.image(backgroundImage) && (
         <PrismicNextImage
           field={backgroundImage}
@@ -46,9 +48,19 @@ const Hero = ({ slice }: HeroProps) => {
                 "justify-items-start items-end"
             )}
           >
-            <div className="max-w-2xl text-left">
+            <div className="max-w-lg text-left text-black">
+              <ConditionalWrap
+                if={slice.primary.animated_title}
+                with={SlideIn}
+                wrapperProps={{ trigger: true, direction: "left" }}
+              >
+                <PrismicRichText
+                  field={slice.primary.text}
+                  components={components}
+                />
+              </ConditionalWrap>
               <PrismicRichText
-                field={slice.primary.text}
+                field={slice.primary.description}
                 components={components}
               />
             </div>

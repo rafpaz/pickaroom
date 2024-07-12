@@ -1,18 +1,23 @@
-import type { ElementType, ReactNode } from "react";
+import type { ElementType, ReactNode, FC } from "react";
+import { createElement } from "react";
 
-type ConditionalWrapProps = {
-  condition: boolean;
-  wrap: ElementType;
-  children: ReactNode;
-};
-
-/**
- * Adds a wrapper around children if a condition is true.
- */
-export function ConditionalWrap({
-  condition,
-  wrap: Wrap,
-  children,
-}: ConditionalWrapProps) {
-  return condition ? <Wrap>{children}</Wrap> : children;
+interface ConditionalWrapProps<T extends ElementType> {
+  if?: boolean;
+  with: T;
+  wrapperProps: React.ComponentPropsWithoutRef<T>;
+  children: NonNullable<ReactNode>;
 }
+
+const ConditionalWrap = <T extends ElementType = "div">({
+  if: condition,
+  with: wrapper,
+  wrapperProps,
+  children,
+}: ConditionalWrapProps<T>) =>
+  condition ? (
+    createElement(wrapper, wrapperProps, [children])
+  ) : (
+    <>{children}</>
+  );
+
+export default ConditionalWrap;

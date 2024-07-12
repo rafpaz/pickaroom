@@ -6,6 +6,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import { useRef } from "react";
 import GridTitle from "./GridTitle";
+import SlideIn from "@/components/SlideIn";
 
 /**
  * Props for `Grid`.
@@ -16,15 +17,15 @@ export type GridProps = SliceComponentProps<Content.GridSlice>;
  * Component for "Grid" Slices.
  */
 const Grid = ({ slice }: GridProps): JSX.Element => {
-  // const titleRef = useRef(null);
-  // const isVisible = useIsVisible(titleRef);
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       <Bounded yPadding="sm" className="relative">
-        <GridTitle title={slice.primary.title} />
+        <SlideIn>
+          <PrismicRichText field={slice.primary.title} />
+        </SlideIn>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {slice.primary.items.map((item, index) => (
             <div key={index}>

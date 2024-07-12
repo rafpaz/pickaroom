@@ -19,14 +19,41 @@
             "allowTargetBlank": true,
             "multi": "paragraph,heading1,heading2,heading3,strong,em,hyperlink,list-item,o-list-item"
           }
+        },
+        "margins": {
+          "type": "Select",
+          "config": {
+            "label": "Margins",
+            "placeholder": "",
+            "options": [
+              "Both",
+              "Top",
+              "Bottom",
+              "None"
+            ],
+            "default_value": "Both"
+          }
+        },
+        "margin_size": {
+          "type": "Select",
+          "config": {
+            "label": "Margin Size",
+            "placeholder": "",
+            "options": [
+              "Medium",
+              "Small",
+              "Large"
+            ],
+            "default_value": "Medium"
+          }
         }
       },
       "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     },
     {
-      "id": "twoColumns",
-      "name": "Two Columns",
+      "id": "textWithAnimation",
+      "name": "Text With Animation",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
       "description": "Text",
@@ -37,7 +64,34 @@
             "label": "Text",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,heading2,heading3,paragraph,em,strong,hyperlink,list-item,o-list-item"
+            "multi": "paragraph,heading1,heading2,heading3,strong,em,hyperlink,list-item,o-list-item"
+          }
+        },
+        "margins": {
+          "type": "Select",
+          "config": {
+            "label": "Margins",
+            "placeholder": "",
+            "options": [
+              "Both",
+              "Top",
+              "Bottom",
+              "None"
+            ],
+            "default_value": "Both"
+          }
+        },
+        "margin_size": {
+          "type": "Select",
+          "config": {
+            "label": "Margin Size",
+            "placeholder": "",
+            "options": [
+              "Medium",
+              "Small",
+              "Large"
+            ],
+            "default_value": "Medium"
           }
         }
       },

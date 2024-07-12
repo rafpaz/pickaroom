@@ -4,8 +4,8 @@ import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
-import { ConditionalWrap } from "@/components/ConditionalWrap";
 import { PrismicRichText } from "@/components/PrismicRichText";
+import ConditionalWrap from "@/components/ConditionalWrap";
 
 type ImageCardProps = {
   card: Content.ImageCardsSliceDefaultPrimaryCardsItem;
@@ -19,12 +19,9 @@ const ImageCard = ({ card }: ImageCardProps) => {
       {isFilled.image(image) && (
         <div className="bg-gray-100">
           <ConditionalWrap
-            condition={isFilled.link(card.buttonLink)}
-            wrap={({ children }) => (
-              <PrismicNextLink field={card.buttonLink} tabIndex={-1}>
-                {children}
-              </PrismicNextLink>
-            )}
+            if={isFilled.link(card.buttonLink)}
+            with={PrismicNextLink}
+            wrapperProps={{ field: card.buttonLink, tabIndex: -1 }}
           >
             <PrismicNextImage field={image} sizes="100vw" className="w-full" />
           </ConditionalWrap>
