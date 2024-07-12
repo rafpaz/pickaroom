@@ -17,7 +17,7 @@
             "label": "Text",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading1,strong,em"
+            "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,rtl"
           }
         },
         "buttonLink": {
@@ -41,6 +41,20 @@
             "label": "Background Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "text_location": {
+          "type": "Select",
+          "config": {
+            "label": "Text Location",
+            "placeholder": "",
+            "options": [
+              "Center",
+              "Center Right",
+              "Center Left",
+              "Bottom Left"
+            ],
+            "default_value": "Center"
           }
         }
       },

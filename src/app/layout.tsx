@@ -16,12 +16,6 @@ const poppins = Poppins({
   weight: ["400", "500", "700"],
 });
 
-// const inter = Inter({
-//   subsets: ["latin"],
-//   display: "swap",
-//   variable: "--font-inter",
-// });
-
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -44,11 +38,5 @@ async function Header() {
   const client = createClient();
   const navigation = await client.getSingle("global_nav");
 
-  return (
-    // <Bounded as="header" yPadding="sm">
-    // <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3 leading-none">
-    <CustomNavbar {...navigation} />
-    // </div>
-    // </Bounded>
-  );
+  return <CustomNavbar {...navigation} />;
 }

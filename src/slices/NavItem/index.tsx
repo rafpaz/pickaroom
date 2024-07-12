@@ -30,7 +30,7 @@ const NavItem = ({ slice }: NavItemProps): JSX.Element => {
 
   if (slice.variation === "default") {
     return (
-      <NavbarItem className="text-white">
+      <NavbarItem className="text-white text-lg">
         <PrismicNextLink field={slice.primary.link}>
           <PrismicText field={slice.primary.label} />
         </PrismicNextLink>
@@ -43,7 +43,7 @@ const NavItem = ({ slice }: NavItemProps): JSX.Element => {
         <NavbarItem>
           <DropdownTrigger className="p-5">
             <Button
-              className="p-0 text-medium bg-transparent data-[hover=true]:bg-transparent text-white antialiased"
+              className="p-0 text-lg bg-transparent data-[hover=true]:bg-transparent text-white antialiased"
               disableRipple
               endContent={<ChevronDown size={16} />}
               radius="sm"
