@@ -345,7 +345,7 @@ export type GridSlice = prismic.SharedSlice<"grid", GridSliceVariation>;
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Text field in *Hero → Default → Primary*
+   * Title field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -353,6 +353,27 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * Animated Title field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero.default.primary.animated_title
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  animated_title: prismic.BooleanField;
+
+  /**
+   * Description field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 
   /**
    * Button Link field in *Hero → Default → Primary*
@@ -890,6 +911,28 @@ export interface TextSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * Margins field in *Text → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Both
+   * - **API ID Path**: text.default.primary.margins
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  margins: prismic.SelectField<"Both" | "Top" | "Bottom" | "None", "filled">;
+
+  /**
+   * Margin Size field in *Text → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Medium
+   * - **API ID Path**: text.default.primary.margin_size
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  margin_size: prismic.SelectField<"Medium" | "Small" | "Large", "filled">;
 }
 
 /**
@@ -906,37 +949,59 @@ export type TextSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Text → Two Columns → Primary*
+ * Primary content in *Text → Text With Animation → Primary*
  */
-export interface TextSliceTwoColumnsPrimary {
+export interface TextSliceTextWithAnimationPrimary {
   /**
-   * Text field in *Text → Two Columns → Primary*
+   * Text field in *Text → Text With Animation → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: text.twoColumns.primary.text
+   * - **API ID Path**: text.textWithAnimation.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * Margins field in *Text → Text With Animation → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Both
+   * - **API ID Path**: text.textWithAnimation.primary.margins
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  margins: prismic.SelectField<"Both" | "Top" | "Bottom" | "None", "filled">;
+
+  /**
+   * Margin Size field in *Text → Text With Animation → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Medium
+   * - **API ID Path**: text.textWithAnimation.primary.margin_size
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  margin_size: prismic.SelectField<"Medium" | "Small" | "Large", "filled">;
 }
 
 /**
- * Two Columns variation for Text Slice
+ * Text With Animation variation for Text Slice
  *
- * - **API ID**: `twoColumns`
+ * - **API ID**: `textWithAnimation`
  * - **Description**: Text
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TextSliceTwoColumns = prismic.SharedSliceVariation<
-  "twoColumns",
-  Simplify<TextSliceTwoColumnsPrimary>,
+export type TextSliceTextWithAnimation = prismic.SharedSliceVariation<
+  "textWithAnimation",
+  Simplify<TextSliceTextWithAnimationPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Text*
  */
-type TextSliceVariation = TextSliceDefault | TextSliceTwoColumns;
+type TextSliceVariation = TextSliceDefault | TextSliceTextWithAnimation;
 
 /**
  * Text Shared Slice
@@ -1121,10 +1186,10 @@ declare module "@prismicio/client" {
       QuoteSliceDefault,
       TextSlice,
       TextSliceDefaultPrimary,
-      TextSliceTwoColumnsPrimary,
+      TextSliceTextWithAnimationPrimary,
       TextSliceVariation,
       TextSliceDefault,
-      TextSliceTwoColumns,
+      TextSliceTextWithAnimation,
       TextWithImageSlice,
       TextWithImageSliceDefaultPrimary,
       TextWithImageSliceWithButtonPrimary,
