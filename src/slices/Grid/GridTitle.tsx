@@ -9,6 +9,7 @@ import { useRef } from "react";
 const GridTitle = ({ title }: { title: RichTextField }): JSX.Element => {
   const titleRef = useRef(null);
   const isVisible = useIsVisible(titleRef);
+  // bla
 
   return (
     <div
