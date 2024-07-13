@@ -11,7 +11,7 @@ import ConditionalWrap from "@/components/ConditionalWrap";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <Heading as="h2" size="xl" className="mb-4 mt-12 first:mt-0 last:mb-0">
+    <Heading as="h2" size="xl" className="mb-4 first:mt-0 last:mb-0">
       {children}
     </Heading>
   ),
