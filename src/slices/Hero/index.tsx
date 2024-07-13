@@ -20,6 +20,7 @@ const components: JSXMapSerializer = {
 type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero = ({ slice }: HeroProps) => {
+  // bla
   const backgroundImage = slice.primary.backgroundImage;
 
   return (
@@ -29,7 +30,7 @@ const Hero = ({ slice }: HeroProps) => {
           field={backgroundImage}
           alt=""
           fill={true}
-          className="pointer-events-none select-none object-cover opacity-40"
+          className="pointer-events-none select-none object-cover opacity-60"
           priority
         />
       )}
