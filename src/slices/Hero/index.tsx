@@ -20,7 +20,6 @@ const components: JSXMapSerializer = {
 type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero = ({ slice }: HeroProps) => {
-  // bla bla bla
   const backgroundImage = slice.primary.backgroundImage;
 
   return (
