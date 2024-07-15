@@ -61,7 +61,7 @@ module.exports = {
         slideInLeft: "slideInLeft 1s ease-in forwards",
         slideInTop: "slideInTop 1s ease-in forwards",
         jelloHorizontal: "jelloHorizontal 0.9s both;",
-        kenburnsTop: "kenburnsTop 7s ease-out both;",
+        kenburnsTop: "kenburnsTop 15s ease-out both;",
       },
       backgroundImage: {
         "custom-gradient":
