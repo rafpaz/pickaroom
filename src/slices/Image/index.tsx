@@ -1,9 +1,9 @@
 import { type Content, isFilled } from "@prismicio/client";
 import type { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
-import clsx from "clsx";
 
 import { Bounded } from "@/components/Bounded";
+import cn from "@/lib/utils/cn";
 
 type ImageProps = SliceComponentProps<Content.ImageSlice>;
 
@@ -13,7 +13,8 @@ const Image = ({ slice, index }: ImageProps) => {
   return (
     <Bounded
       as="section"
-      className={clsx("bg-white", index === 0 && "pt-0 md:pt-0")}
+      yPadding="sm"
+      className={cn("bg-white", index === 0 && "pt-0 md:pt-0")}
     >
       {isFilled.image(image) && (
         <div className="bg-gray-100">

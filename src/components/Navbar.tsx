@@ -11,8 +11,8 @@ import { SliceZone } from "@prismicio/react";
 import { GlobalNavDocument } from "../../prismicio-types";
 import { components } from "@/slices";
 import useScrollDirection from "./__hooks__/useScrollDirection";
-import clsx from "clsx";
 import CustomNavbarMenu from "./CustomNavbarMenu";
+import cn from "@/lib/utils/cn";
 
 export default function CustomNavbar({ data }: GlobalNavDocument) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -23,7 +23,7 @@ export default function CustomNavbar({ data }: GlobalNavDocument) {
       onMenuOpenChange={setIsMenuOpen}
       isBlurred={false}
       maxWidth="xl"
-      className={clsx(
+      className={cn(
         "top-0 fixed transition-opacity bg-custom-gradient backdrop-blur-[1px] duration-500",
         scrollDirection === "down" && "opacity-0"
       )}

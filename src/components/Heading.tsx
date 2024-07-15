@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import clsx from "clsx";
+import cn from "@/lib/utils/cn";
 
 type HeadingProps = {
   as?: "h1" | "h2" | "h3";
@@ -16,13 +16,13 @@ export function Heading({
 }: HeadingProps) {
   return (
     <Comp
-      className={clsx(
+      className={cn(
         "font-semibold leading-tight tracking-tight md:leading-tight",
         size === "xl" && "text-5xl md:text-7xl",
         size === "lg" && "text-4xl md:text-5xl",
         size === "md" && "text-3xl md:text-4xl",
         size === "sm" && "text-xl md:text-2xl",
-        className,
+        className
       )}
     >
       {children}

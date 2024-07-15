@@ -23,7 +23,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"url": "https://images.unsplash.com/photo-1613260976142-3e9700b7a6a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE5NTMwMDQ2fDA&ixlib=rb-4.0.3&q=85&rect=0%2C444%2C4960%2C2705&w=2200&h=1200",
 									"alt": "orange fruits on blue ceramic bowl",
 									"origin": {
@@ -42,6 +41,8 @@
 											"y": 444
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],
@@ -53,7 +54,7 @@
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "In velit aute qui est aute exercitation. Lorem enim enim ut magna pariatur commodo. Id non sit sunt tempor aliquip ullamco elit consectetur consectetur mollit et et."
+												"text": "Cupidatat laboris voluptate ut velit occaecat adipisicing mollit nisi et. Aliquip eu ut quis commodo ipsum magna proident nulla nostrud do enim voluptate non ut."
 											}
 										}
 									]
