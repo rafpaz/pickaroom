@@ -15,6 +15,39 @@ module.exports = {
     },
     extend: {
       keyframes: {
+        kenburnsTop: {
+          "0%": {
+            transform: "scale(1) translateY(0)",
+            transformOrigin: "50% 16%",
+          },
+          "100%": {
+            transform: "scale(1.25) translateY(-15px)",
+            transformOrigin: "top",
+          },
+        },
+        jelloHorizontal: {
+          "0%": {
+            transform: "scale3d(1, 1, 1)",
+          },
+          "30%": {
+            transform: "scale3d(1.25, 0.75, 1)",
+          },
+          "40%": {
+            transform: "scale3d(0.75, 1.25, 1)",
+          },
+          "50%": {
+            transform: "scale3d(1.15, 0.85, 1)",
+          },
+          "65%": {
+            transform: "scale3d(0.95, 1.05, 1)",
+          },
+          "75%": {
+            transform: "scale3d(1.05, 0.95, 1)",
+          },
+          "100%": {
+            transform: "scale3d(1, 1, 1)",
+          },
+        },
         slideInLeft: {
           "0%": { transform: "translateX(-10%)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" },
@@ -27,6 +60,8 @@ module.exports = {
       animation: {
         slideInLeft: "slideInLeft 1s ease-in forwards",
         slideInTop: "slideInTop 1s ease-in forwards",
+        jelloHorizontal: "jelloHorizontal 0.9s both;",
+        kenburnsTop: "kenburnsTop 7s ease-out both;",
       },
       backgroundImage: {
         "custom-gradient":

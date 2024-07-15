@@ -5,9 +5,9 @@ import type { SliceComponentProps, JSXMapSerializer } from "@prismicio/react";
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
 import { PrismicRichText } from "@/components/PrismicRichText";
-import SlideIn from "@/components/SlideIn";
 import ConditionalWrap from "@/components/ConditionalWrap";
 import cn from "@/lib/utils/cn";
+import CustomAnimation from "@/components/CustomAnimation";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -27,13 +27,13 @@ const Hero = ({ slice }: HeroProps) => {
   const backgroundImage = slice.primary.backgroundImage;
 
   return (
-    <section className="relative min-h-screen mb-8">
+    <section className="relative min-h-screen mb-8 overflow-hidden">
       {isFilled.image(backgroundImage) && (
         <PrismicNextImage
           field={backgroundImage}
           alt=""
           fill={true}
-          className="pointer-events-none select-none object-cover opacity-60"
+          className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop"
           priority
         />
       )}
@@ -55,8 +55,8 @@ const Hero = ({ slice }: HeroProps) => {
             <div className="max-w-lg text-left text-black">
               <ConditionalWrap
                 if={slice.primary.animated_title}
-                with={SlideIn}
-                wrapperProps={{ trigger: true, direction: "left" }}
+                with={CustomAnimation}
+                wrapperProps={{ trigger: true, animationType: "slideInLeft" }}
               >
                 <PrismicRichText
                   field={slice.primary.text}

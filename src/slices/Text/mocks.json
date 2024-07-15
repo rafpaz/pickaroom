@@ -74,6 +74,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "Medium",
 				"type": "Select"
+			},
+			"animate_type": {
+				"__TYPE__": "FieldContent",
+				"value": "jelloHorizontal",
+				"type": "Select"
 			}
 		},
 		"items": [

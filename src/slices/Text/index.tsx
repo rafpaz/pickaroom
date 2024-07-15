@@ -3,7 +3,7 @@ import type { SliceComponentProps } from "@prismicio/react";
 
 import { Bounded } from "@/components/Bounded";
 import { PrismicRichText } from "@/components/PrismicRichText";
-import SlideIn from "@/components/SlideIn";
+import CustomAnimation from "@/components/CustomAnimation";
 import cn from "@/lib/utils/cn";
 
 type TextProps = SliceComponentProps<Content.TextSlice>;
@@ -34,7 +34,9 @@ const Text = ({ slice }: TextProps) => {
       )}
     >
       {slice.variation === "textWithAnimation" && (
-        <SlideIn>{component(slice)}</SlideIn>
+        <CustomAnimation animationType={slice.primary.animate_type}>
+          {component(slice)}
+        </CustomAnimation>
       )}
       {slice.variation === "default" && component(slice)}
       {slice.variation === "rightAlignedText" && (

@@ -4,13 +4,13 @@ import { useIsVisible } from "@/components/__hooks__/useIsVisible";
 import cn from "@/lib/utils/cn";
 import { PropsWithChildren, useEffect, useRef, useState } from "react";
 
-const SlideIn: React.FC<
+const CustomAnimation: React.FC<
   PropsWithChildren & {
-    direction?: "top" | "left";
+    animationType?: "slideInLeft" | "slideInTop" | "jelloHorizontal";
     trigger?: boolean;
     active?: boolean;
   }
-> = ({ children, direction = "top", trigger, active = true }) => {
+> = ({ children, animationType = "slideInLeft", trigger, active = true }) => {
   const elemRef = useRef(null);
   const [showAnimation, setShowAnimation] = useState(false);
   const isVisible = useIsVisible(elemRef);
@@ -23,15 +23,18 @@ const SlideIn: React.FC<
 
   if (!active) return children;
 
-  const animation =
-    direction === "top" ? "animate-slideInTop" : "animate-slideInLeft";
-
   return (
     <div
       ref={elemRef}
       className={cn(
         "mb-4 transition-all overflow-hidden",
-        showAnimation ? animation : "opacity-0"
+        showAnimation &&
+          animationType === "slideInLeft" &&
+          "animate-slideInLeft",
+        showAnimation && animationType === "slideInTop" && "animate-slideInTop",
+        showAnimation &&
+          animationType === "jelloHorizontal" &&
+          "animate-jelloHorizontal"
       )}
     >
       {children}
@@ -39,4 +42,4 @@ const SlideIn: React.FC<
   );
 };
 
-export default SlideIn;
+export default CustomAnimation;

@@ -1,12 +1,9 @@
-import { useIsVisible } from "@/components/__hooks__/useIsVisible";
 import { Bounded } from "@/components/Bounded";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-import { useRef } from "react";
-import GridTitle from "./GridTitle";
-import SlideIn from "@/components/SlideIn";
+import CustomAnimation from "@/components/CustomAnimation";
 
 /**
  * Props for `Grid`.
@@ -23,9 +20,9 @@ const Grid = ({ slice }: GridProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <Bounded yPadding="sm" className="relative">
-        <SlideIn>
+        <CustomAnimation>
           <PrismicRichText field={slice.primary.title} />
-        </SlideIn>
+        </CustomAnimation>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {slice.primary.items.map((item, index) => (
             <div key={index}>

@@ -983,6 +983,20 @@ export interface TextSliceTextWithAnimationPrimary {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   margin_size: prismic.SelectField<"Medium" | "Small" | "Large", "filled">;
+
+  /**
+   * Animate Type field in *Text → Text With Animation → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: slideInLeft
+   * - **API ID Path**: text.textWithAnimation.primary.animate_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  animate_type: prismic.SelectField<
+    "slideInLeft" | "slideInTop" | "jelloHorizontal",
+    "filled"
+  >;
 }
 
 /**
