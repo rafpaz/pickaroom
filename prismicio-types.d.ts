@@ -1017,14 +1017,14 @@ export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
  */
 export interface TextWithImageSliceDefaultPrimary {
   /**
-   * Text field in *TextWithImage → Default → Primary*
+   * Title field in *TextWithImage → Default → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: text_with_image.default.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **API ID Path**: text_with_image.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  text: prismic.RichTextField;
+  title: prismic.KeyTextField;
 
   /**
    * Image field in *TextWithImage → Default → Primary*
@@ -1035,6 +1035,16 @@ export interface TextWithImageSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *TextWithImage → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
 }
 
 /**
@@ -1093,6 +1103,16 @@ export interface TextWithImageSliceWithButtonPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *TextWithImage → With Button → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.withButton.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
 }
 
 /**
@@ -1109,11 +1129,60 @@ export type TextWithImageSliceWithButton = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextWithImage → ImageWithText → Primary*
+ */
+export interface TextWithImageSliceImageWithTextPrimary {
+  /**
+   * Title field in *TextWithImage → ImageWithText → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.imageWithText.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Text field in *TextWithImage → ImageWithText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.imageWithText.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Image field in *TextWithImage → ImageWithText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.imageWithText.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * ImageWithText variation for TextWithImage Slice
+ *
+ * - **API ID**: `imageWithText`
+ * - **Description**: TextWithImage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextWithImageSliceImageWithText = prismic.SharedSliceVariation<
+  "imageWithText",
+  Simplify<TextWithImageSliceImageWithTextPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TextWithImage*
  */
 type TextWithImageSliceVariation =
   | TextWithImageSliceDefault
-  | TextWithImageSliceWithButton;
+  | TextWithImageSliceWithButton
+  | TextWithImageSliceImageWithText;
 
 /**
  * TextWithImage Shared Slice
@@ -1193,9 +1262,11 @@ declare module "@prismicio/client" {
       TextWithImageSlice,
       TextWithImageSliceDefaultPrimary,
       TextWithImageSliceWithButtonPrimary,
+      TextWithImageSliceImageWithTextPrimary,
       TextWithImageSliceVariation,
       TextWithImageSliceDefault,
       TextWithImageSliceWithButton,
+      TextWithImageSliceImageWithText,
     };
   }
 }

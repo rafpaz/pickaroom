@@ -18,12 +18,14 @@ const defaultComponents: JSXMapSerializer = {
       {children}
     </Heading>
   ),
-  heading3: ({ children }) => (
-    <Heading as="h3" size="sm" className="mb-7 first:mt-0 last:mb-0">
-      {children}
-    </Heading>
-  ),
-  paragraph: ({ children }) => <p className=" last:mb-0">{children}</p>,
+  heading3: ({ children }) => {
+    return (
+      <Heading as="h3" size="sm" className="mb-7 first:mt-0 last:mb-0">
+        {children}
+      </Heading>
+    );
+  },
+  paragraph: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
   oList: ({ children }) => (
     <ol className="mb-7 pl-4 last:mb-0 md:pl-6">{children}</ol>
   ),

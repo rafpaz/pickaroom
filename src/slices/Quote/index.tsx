@@ -14,15 +14,13 @@ const Quote = ({ slice }: QuoteProps) => {
           <blockquote>
             <p
               className={clsx(
-                "text-4xl font-medium leading-tight md:text-5xl md:leading-tight",
-                !isFilled.keyText(slice.primary.source) && "text-center",
+                "text-xl leading-tight md:text-2xl md:leading-tight italic",
+                !isFilled.keyText(slice.primary.source) && "text-center"
               )}
             >
-              <span className="-ml-3.5 select-none text-slate-400 md:-ml-5">
-                &ldquo;
-              </span>
+              <span className="-ml-3.5 select-none md:-ml-5">&ldquo;</span>
               <PrismicText field={slice.primary.quote} />
-              <span className="select-none text-slate-400">&rdquo;</span>
+              <span className="select-none">&rdquo;</span>
             </p>
           </blockquote>
           {isFilled.keyText(slice.primary.source) && (
