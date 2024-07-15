@@ -1,8 +1,8 @@
 import { type Content, isFilled } from "@prismicio/client";
 import { PrismicText, type SliceComponentProps } from "@prismicio/react";
-import clsx from "clsx";
 
 import { Bounded } from "@/components/Bounded";
+import cn from "@/lib/utils/cn";
 
 type QuoteProps = SliceComponentProps<Content.QuoteSlice>;
 
@@ -13,7 +13,7 @@ const Quote = ({ slice }: QuoteProps) => {
         <figure className="grid gap-6">
           <blockquote>
             <p
-              className={clsx(
+              className={cn(
                 "text-xl leading-tight md:text-2xl md:leading-tight italic",
                 !isFilled.keyText(slice.primary.source) && "text-center"
               )}

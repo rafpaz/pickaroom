@@ -1,10 +1,10 @@
 import type { Content } from "@prismicio/client";
 import type { SliceComponentProps } from "@prismicio/react";
-import clsx from "clsx";
 
 import { Bounded } from "@/components/Bounded";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import SlideIn from "@/components/SlideIn";
+import cn from "@/lib/utils/cn";
 
 type TextProps = SliceComponentProps<Content.TextSlice>;
 
@@ -19,7 +19,7 @@ const Text = ({ slice }: TextProps) => {
     <Bounded
       as="section"
       yPadding="none"
-      className={clsx(
+      className={cn(
         "bg-white leading-relaxed",
         margins === "None" && "py-0",
         margins === "Top" && marginSize === "Large" && "pt-32",
@@ -33,10 +33,15 @@ const Text = ({ slice }: TextProps) => {
         margins === "Both" && marginSize === "Medium" && "py-20"
       )}
     >
-      {slice.variation === "textWithAnimation" ? (
+      {slice.variation === "textWithAnimation" && (
         <SlideIn>{component(slice)}</SlideIn>
-      ) : (
-        component(slice)
+      )}
+      {slice.variation === "default" && component(slice)}
+      {slice.variation === "rightAlignedText" && (
+        <div className="flex">
+          <div className="flex-grow-1 w-full"></div>
+          <div className="flex-grow-2">{component(slice)}</div>
+        </div>
       )}
     </Bounded>
   );

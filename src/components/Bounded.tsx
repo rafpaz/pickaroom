@@ -1,5 +1,5 @@
+import cn from "@/lib/utils/cn";
 import type { ReactNode } from "react";
-import clsx from "clsx";
 
 type BoundedProps = {
   as?: "div" | "section" | "header";
@@ -19,7 +19,7 @@ export function Bounded({
   return (
     <Comp
       data-collapsible={collapsible}
-      className={clsx(
+      className={cn(
         yPadding === "none" && "",
         yPadding === "sm" && "py-8 md:py-10",
         yPadding === "base" && "py-20 md:py-28",

@@ -4,7 +4,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 import { Bounded } from "@/components/Bounded";
 import { PrismicRichText } from "@/components/PrismicRichText";
-import clsx from "clsx";
+import cn from "@/lib/utils/cn";
 
 type TextWithImageProps = SliceComponentProps<Content.TextWithImageSlice>;
 
@@ -20,7 +20,7 @@ const TextWithImage = ({ slice }: TextWithImageProps) => {
       )}
       <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
         <div
-          className={clsx(
+          className={cn(
             slice.variation === "default" && "order-1",
             slice.variation === "imageWithText" && "order-2"
           )}
@@ -36,7 +36,7 @@ const TextWithImage = ({ slice }: TextWithImageProps) => {
           ) : null}
         </div>
         <div
-          className={clsx(
+          className={cn(
             slice.variation === "default" && "order-2",
             slice.variation === "imageWithText" && "order-1"
           )}

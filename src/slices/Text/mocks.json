@@ -82,5 +82,38 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "rightAlignedText",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim non Lorem quis. Esse id dolore est consectetur do."
+						}
+					}
+				]
+			},
+			"margins": {
+				"__TYPE__": "FieldContent",
+				"value": "Both",
+				"type": "Select"
+			},
+			"margin_size": {
+				"__TYPE__": "FieldContent",
+				"value": "Medium",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

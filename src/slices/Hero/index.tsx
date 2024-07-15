@@ -5,13 +5,17 @@ import type { SliceComponentProps, JSXMapSerializer } from "@prismicio/react";
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
 import { PrismicRichText } from "@/components/PrismicRichText";
-import clsx from "clsx";
 import SlideIn from "@/components/SlideIn";
 import ConditionalWrap from "@/components/ConditionalWrap";
+import cn from "@/lib/utils/cn";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <Heading as="h2" size="xl" className="mb-4 first:mt-0 last:mb-0">
+    <Heading
+      as="h1"
+      size="xl"
+      className="mb-4 first:mt-0 last:mb-0 tracking-wide font-bold"
+    >
       {children}
     </Heading>
   ),
@@ -23,7 +27,7 @@ const Hero = ({ slice }: HeroProps) => {
   const backgroundImage = slice.primary.backgroundImage;
 
   return (
-    <section className="relative min-h-screen">
+    <section className="relative min-h-screen mb-8">
       {isFilled.image(backgroundImage) && (
         <PrismicNextImage
           field={backgroundImage}
@@ -36,7 +40,7 @@ const Hero = ({ slice }: HeroProps) => {
       <Bounded yPadding="sm" className="relative min-h-screen">
         {slice.variation === "default" && (
           <div
-            className={clsx(
+            className={cn(
               "grid gap-8 h-[calc(100vh-80px)]",
               slice.primary.text_location === "Center" &&
                 "items-center justify-items-center",

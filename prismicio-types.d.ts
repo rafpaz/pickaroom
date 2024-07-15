@@ -999,9 +999,62 @@ export type TextSliceTextWithAnimation = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Text → Right Aligned Text → Primary*
+ */
+export interface TextSliceRightAlignedTextPrimary {
+  /**
+   * Text field in *Text → Right Aligned Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.rightAlignedText.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Margins field in *Text → Right Aligned Text → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Both
+   * - **API ID Path**: text.rightAlignedText.primary.margins
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  margins: prismic.SelectField<"Both" | "Top" | "Bottom" | "None", "filled">;
+
+  /**
+   * Margin Size field in *Text → Right Aligned Text → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Medium
+   * - **API ID Path**: text.rightAlignedText.primary.margin_size
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  margin_size: prismic.SelectField<"Medium" | "Small" | "Large", "filled">;
+}
+
+/**
+ * Right Aligned Text variation for Text Slice
+ *
+ * - **API ID**: `rightAlignedText`
+ * - **Description**: Text
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceRightAlignedText = prismic.SharedSliceVariation<
+  "rightAlignedText",
+  Simplify<TextSliceRightAlignedTextPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Text*
  */
-type TextSliceVariation = TextSliceDefault | TextSliceTextWithAnimation;
+type TextSliceVariation =
+  | TextSliceDefault
+  | TextSliceTextWithAnimation
+  | TextSliceRightAlignedText;
 
 /**
  * Text Shared Slice
@@ -1256,9 +1309,11 @@ declare module "@prismicio/client" {
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceTextWithAnimationPrimary,
+      TextSliceRightAlignedTextPrimary,
       TextSliceVariation,
       TextSliceDefault,
       TextSliceTextWithAnimation,
+      TextSliceRightAlignedText,
       TextWithImageSlice,
       TextWithImageSliceDefaultPrimary,
       TextWithImageSliceWithButtonPrimary,

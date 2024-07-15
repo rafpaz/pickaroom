@@ -1,14 +1,8 @@
 "use client";
 
 import { useIsVisible } from "@/components/__hooks__/useIsVisible";
-import clsx from "clsx";
-import {
-  PropsWithChildren,
-  ReactElement,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import cn from "@/lib/utils/cn";
+import { PropsWithChildren, useEffect, useRef, useState } from "react";
 
 const SlideIn: React.FC<
   PropsWithChildren & {
@@ -35,7 +29,7 @@ const SlideIn: React.FC<
   return (
     <div
       ref={elemRef}
-      className={clsx(
+      className={cn(
         "mb-4 transition-all overflow-hidden",
         showAnimation ? animation : "opacity-0"
       )}
