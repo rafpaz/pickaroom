@@ -9,7 +9,7 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Differ"
+							"text": "Activity"
 						}
 					}
 				]
@@ -70,7 +70,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"url": "https://images.unsplash.com/photo-1577234286642-fc512a5f8f11?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjA2NDYxMzB8MA&ixlib=rb-4.0.3&q=85",
 									"alt": "sliced grapefruits",
 									"origin": {
@@ -89,6 +88,8 @@
 											"y": 0
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],
@@ -116,7 +117,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"url": "https://images.unsplash.com/photo-1590004828948-09db7606e5ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw3fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjA2NDYxMzB8MA&ixlib=rb-4.0.3&q=85",
 									"alt": "sliced orange fruit on white surface",
 									"origin": {
@@ -135,6 +135,8 @@
 											"y": 0
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],
@@ -162,7 +164,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"url": "https://images.unsplash.com/photo-1617535394783-60cb2381b2ce?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzIwNjQ2MTMwfDA&ixlib=rb-4.0.3&q=85",
 									"alt": "clear glass mug with orange fruits",
 									"origin": {
@@ -181,6 +182,8 @@
 											"y": 0
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],

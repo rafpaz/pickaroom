@@ -20,10 +20,10 @@ const Grid = ({ slice }: GridProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <Bounded yPadding="sm" className="relative">
-        <CustomAnimation>
+        <CustomAnimation className="mb-16">
           <PrismicRichText field={slice.primary.title} />
         </CustomAnimation>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {slice.primary.items.map((item, index) => (
             <div key={index}>
               <div className="aspect-w-[214] aspect-h-[270]">

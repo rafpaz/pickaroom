@@ -14,7 +14,7 @@ const TextWithImage = ({ slice }: TextWithImageProps) => {
   return (
     <Bounded as="section" yPadding="sm" className="bg-white">
       {slice.primary.title && (
-        <div className="text-center mb-10 whitespace-pre-wrap text-2xl">
+        <div className="text-center mb-10 whitespace-pre-wrap text-3xl">
           {slice.primary.title}
         </div>
       )}
