@@ -18,7 +18,7 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "heading2"
+            "multi": "heading2,strong"
           }
         },
         "items": {

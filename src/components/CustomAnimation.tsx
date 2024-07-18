@@ -6,11 +6,22 @@ import { PropsWithChildren, useEffect, useRef, useState } from "react";
 
 const CustomAnimation: React.FC<
   PropsWithChildren & {
-    animationType?: "slideInLeft" | "slideInTop" | "jelloHorizontal";
+    animationType?:
+      | "slideInLeft"
+      | "slideInTop"
+      | "jelloHorizontal"
+      | "bounceTop";
     trigger?: boolean;
     active?: boolean;
+    className?: string;
   }
-> = ({ children, animationType = "slideInLeft", trigger, active = true }) => {
+> = ({
+  children,
+  animationType = "slideInLeft",
+  trigger,
+  active = true,
+  className,
+}) => {
   const elemRef = useRef(null);
   const [showAnimation, setShowAnimation] = useState(false);
   const isVisible = useIsVisible(elemRef);
@@ -28,13 +39,15 @@ const CustomAnimation: React.FC<
       ref={elemRef}
       className={cn(
         "mb-4 transition-all overflow-hidden",
+        className,
         showAnimation &&
           animationType === "slideInLeft" &&
           "animate-slideInLeft",
         showAnimation && animationType === "slideInTop" && "animate-slideInTop",
         showAnimation &&
           animationType === "jelloHorizontal" &&
-          "animate-jelloHorizontal"
+          "animate-jelloHorizontal",
+        showAnimation && animationType === "bounceTop" && "animate-bounceTop"
       )}
     >
       {children}

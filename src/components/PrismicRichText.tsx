@@ -9,14 +9,14 @@ import { Heading } from "./Heading";
 
 const defaultComponents: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <Heading as="h1" className="mb-7 first:mt-0 last:mb-0 font-bold">
+    <Heading as="h1" size="xl" className="mb-7 first:mt-0 last:mb-0 font-bold">
       {children}
     </Heading>
   ),
   heading2: ({ children }) => (
     <Heading
       as="h2"
-      size="md"
+      size="lg"
       className="mb-7 first:mt-0 last:mb-0 tracking-wide"
     >
       {children}
@@ -29,7 +29,9 @@ const defaultComponents: JSXMapSerializer = {
       </Heading>
     );
   },
-  paragraph: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
+  paragraph: ({ children }) => (
+    <p className="font-light text-lg mb-4 last:mb-0">{children}</p>
+  ),
   oList: ({ children }) => (
     <ol className="mb-7 pl-4 last:mb-0 md:pl-6">{children}</ol>
   ),
@@ -47,9 +49,7 @@ const defaultComponents: JSXMapSerializer = {
       <code>{children}</code>
     </pre>
   ),
-  strong: ({ children }) => (
-    <strong className="font-semibold">{children}</strong>
-  ),
+  strong: ({ children }) => <strong className="font-bold">{children}</strong>,
   hyperlink: ({ children, node }) => (
     <PrismicNextLink
       field={node.data}

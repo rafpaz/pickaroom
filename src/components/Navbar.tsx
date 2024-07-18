@@ -16,11 +16,19 @@ import cn from "@/lib/utils/cn";
 
 export default function CustomNavbar({ data }: GlobalNavDocument) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  console.log(" --------------------------------------");
+  console.log("CustomNavbar ~ isMenuOpen:", isMenuOpen);
+  console.log(" --------------------------------------");
   const scrollDirection = useScrollDirection();
+
+  const handleItemClick = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
       isBlurred={false}
       maxWidth="xl"
       className={cn(
@@ -42,7 +50,10 @@ export default function CustomNavbar({ data }: GlobalNavDocument) {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <SliceZone slices={data.slices} components={components} />
       </NavbarContent>
-      <CustomNavbarMenu slices={data.slices} />
+      <CustomNavbarMenu
+        slices={data.slices}
+        handleItemClick={handleItemClick}
+      />
     </Navbar>
   );
 }

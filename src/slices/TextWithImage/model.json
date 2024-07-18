@@ -99,13 +99,6 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "TextWithImage",
       "primary": {
-        "title": {
-          "type": "Text",
-          "config": {
-            "label": "Title",
-            "placeholder": ""
-          }
-        },
         "text": {
           "type": "StructuredText",
           "config": {
@@ -124,6 +117,27 @@
               "height": 1200
             },
             "thumbnails": []
+          }
+        },
+        "left_title": {
+          "type": "Text",
+          "config": {
+            "label": "Left Title",
+            "placeholder": ""
+          }
+        },
+        "middle_title": {
+          "type": "Text",
+          "config": {
+            "label": "Middle Title",
+            "placeholder": ""
+          }
+        },
+        "right_title": {
+          "type": "Text",
+          "config": {
+            "label": "Right Title",
+            "placeholder": ""
           }
         }
       },

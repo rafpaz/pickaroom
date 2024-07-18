@@ -7,15 +7,22 @@ import { PrismicNextLink } from "@prismicio/next";
 
 interface NavbarMenuItemProps {
   slices: SliceZone<NavItemSlice>;
+  handleItemClick?: () => void;
 }
 
-const CustomNavbarMenu: React.FC<NavbarMenuItemProps> = ({ slices }) => {
+const CustomNavbarMenu: React.FC<NavbarMenuItemProps> = ({
+  slices,
+  handleItemClick,
+}) => {
   return (
     <NavbarMenu>
       {slices.map((slice, index) =>
         slice.variation === "default" ? (
           <NavbarMenuItem key={index}>
-            <PrismicNextLink field={slice.primary.link}>
+            <PrismicNextLink
+              field={slice.primary.link}
+              onClick={handleItemClick}
+            >
               <PrismicText field={slice.primary.label} />
             </PrismicNextLink>
           </NavbarMenuItem>
@@ -36,6 +43,7 @@ const CustomNavbarMenu: React.FC<NavbarMenuItemProps> = ({ slices }) => {
                     className="mt-2"
                   >
                     <PrismicNextLink
+                      onClick={handleItemClick}
                       color={
                         index === 2
                           ? "primary"

@@ -77,7 +77,7 @@
 			},
 			"animate_type": {
 				"__TYPE__": "FieldContent",
-				"value": "jelloHorizontal",
+				"value": "slideInLeft",
 				"type": "Select"
 			}
 		},

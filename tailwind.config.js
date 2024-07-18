@@ -56,12 +56,48 @@ module.exports = {
           "0%": { transform: "translateY(-100%)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
+        bounceTop: {
+          "0%": {
+            transform: "translateY(-45px)",
+            animationTimingFunction: "ease-in",
+            opacity: 1,
+          },
+          "24%": {
+            opacity: 1,
+          },
+          "40%": {
+            transform: "translateY(-24px)",
+            animationTimingFunction: "ease-in",
+          },
+          "65%": {
+            transform: "translateY(-12px)",
+            animationTimingFunction: "ease-in",
+          },
+          "82%": {
+            transform: "translateY(-6px)",
+            animationTimingFunction: "ease-in",
+          },
+          "93%": {
+            transform: "translateY(-4px)",
+            animationTimingFunction: "ease-in",
+          },
+          "25%, 55%, 75%, 87%": {
+            transform: "translateY(0px)",
+            animationTimingFunction: "ease-out",
+          },
+          "100%": {
+            transform: "translateY(0px)",
+            animationTimingFunction: "ease-out",
+            opacity: 1,
+          },
+        },
       },
       animation: {
         slideInLeft: "slideInLeft 1s ease-in forwards",
         slideInTop: "slideInTop 1s ease-in forwards",
         jelloHorizontal: "jelloHorizontal 0.9s both;",
-        kenburnsTop: "kenburnsTop 7s ease-out both;",
+        kenburnsTop: "kenburnsTop 15s ease-out both;",
+        bounceTop: "bounceTop 2s both",
       },
       backgroundImage: {
         "custom-gradient":

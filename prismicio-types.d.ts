@@ -994,7 +994,7 @@ export interface TextSliceTextWithAnimationPrimary {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   animate_type: prismic.SelectField<
-    "slideInLeft" | "slideInTop" | "jelloHorizontal",
+    "slideInLeft" | "slideInTop" | "jelloHorizontal" | "bounceTop",
     "filled"
   >;
 }
@@ -1200,16 +1200,6 @@ export type TextWithImageSliceWithButton = prismic.SharedSliceVariation<
  */
 export interface TextWithImageSliceImageWithTextPrimary {
   /**
-   * Title field in *TextWithImage → ImageWithText → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_with_image.imageWithText.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
    * Text field in *TextWithImage → ImageWithText → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1228,6 +1218,36 @@ export interface TextWithImageSliceImageWithTextPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Left Title field in *TextWithImage → ImageWithText → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.imageWithText.primary.left_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  left_title: prismic.KeyTextField;
+
+  /**
+   * Middle Title field in *TextWithImage → ImageWithText → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.imageWithText.primary.middle_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  middle_title: prismic.KeyTextField;
+
+  /**
+   * Right Title field in *TextWithImage → ImageWithText → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.imageWithText.primary.right_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  right_title: prismic.KeyTextField;
 }
 
 /**

@@ -13,7 +13,7 @@ const poppins = Poppins({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-poppins",
-  weight: ["400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "600", "700"],
 });
 
 export default async function RootLayout({

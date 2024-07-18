@@ -102,7 +102,8 @@
             "options": [
               "slideInLeft",
               "slideInTop",
-              "jelloHorizontal"
+              "jelloHorizontal",
+              "bounceTop"
             ],
             "default_value": "slideInLeft"
           }
