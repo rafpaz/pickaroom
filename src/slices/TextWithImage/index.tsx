@@ -13,12 +13,14 @@ const TextWithImage = ({ slice }: TextWithImageProps) => {
 
   return (
     <Bounded as="section" yPadding="sm" className="bg-white">
-      {slice.primary.title && (
-        <div className="text-center mb-10 whitespace-pre-wrap text-3xl">
-          {slice.primary.title}
+      {slice.variation === "imageWithText" && (
+        <div className="mb-10 text-3xl flex gap-2 flex-col md:flex-row md:justify-between">
+          <div>{slice.primary.left_title}</div>
+          <div>{slice.primary.middle_title}</div>
+          <div>{slice.primary.right_title}</div>
         </div>
       )}
-      <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+      <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-2">
         <div
           className={cn(
             slice.variation === "default" && "order-1",

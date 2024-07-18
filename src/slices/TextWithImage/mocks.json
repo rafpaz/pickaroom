@@ -151,9 +151,19 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"title": {
+			"left_title": {
 				"__TYPE__": "FieldContent",
-				"value": "summer",
+				"value": "general",
+				"type": "Text"
+			},
+			"middle_title": {
+				"__TYPE__": "FieldContent",
+				"value": "worse",
+				"type": "Text"
+			},
+			"right_title": {
+				"__TYPE__": "FieldContent",
+				"value": "traffic",
 				"type": "Text"
 			}
 		},

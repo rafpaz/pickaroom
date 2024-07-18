@@ -6,7 +6,11 @@ import { PropsWithChildren, useEffect, useRef, useState } from "react";
 
 const CustomAnimation: React.FC<
   PropsWithChildren & {
-    animationType?: "slideInLeft" | "slideInTop" | "jelloHorizontal";
+    animationType?:
+      | "slideInLeft"
+      | "slideInTop"
+      | "jelloHorizontal"
+      | "bounceTop";
     trigger?: boolean;
     active?: boolean;
     className?: string;
@@ -42,7 +46,8 @@ const CustomAnimation: React.FC<
         showAnimation && animationType === "slideInTop" && "animate-slideInTop",
         showAnimation &&
           animationType === "jelloHorizontal" &&
-          "animate-jelloHorizontal"
+          "animate-jelloHorizontal",
+        showAnimation && animationType === "bounceTop" && "animate-bounceTop"
       )}
     >
       {children}
