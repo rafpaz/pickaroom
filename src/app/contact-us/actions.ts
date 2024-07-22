@@ -1,7 +1,7 @@
 "use server";
 
 import { CourierClient } from "@trycourier/courier";
-import { z } from "zod";
+import { contactUsSchema } from "./contactUsSchema";
 
 export async function contactUs(
   prevState: {
@@ -9,19 +9,16 @@ export async function contactUs(
   },
   formData: FormData
 ) {
-  const schema = z.object({
-    name: z.string().min(1),
-    email: z.string().email(),
-    content: z.string(),
-  });
-
-  const { data, error, success } = schema.safeParse({
+  const { data, error, success } = contactUsSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
     content: formData.get("content"),
   });
   if (error) {
-    throw new Error(error.message);
+    return {
+      message: "Validation Error",
+      error: JSON.stringify(error.flatten()),
+    };
   }
 
   const courier = new CourierClient({
