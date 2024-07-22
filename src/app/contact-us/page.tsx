@@ -6,6 +6,7 @@ import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
 import { useEffect, useState } from "react";
 import { FlattenedErrors } from "./contactUsSchema";
+import FormInput from "@/components/FormInput";
 
 const initialState = {
   message: "",
@@ -41,42 +42,28 @@ export default function ContactUsForm() {
       className="flex flex-col items-center gap-4 mt-[124px]"
       action={formAction}
     >
-      <Input
-        color="primary"
-        className="w-fit"
-        isRequired
+      <FormInput
         label="Name"
         name="name"
         variant="bordered"
-        isInvalid={!!errors?.fieldErrors?.name}
-        errorMessage={errors?.fieldErrors?.name}
+        error={errors?.fieldErrors?.name}
+        isRequired
       />
-      <Input
-        color="primary"
-        className="w-fit"
+      <FormInput
         type="email"
         name="email"
         isRequired
         label="Email"
-        variant="bordered"
-        isInvalid={!!errors?.fieldErrors?.email}
-        errorMessage={errors?.fieldErrors?.email}
+        error={errors?.fieldErrors?.email}
       />
-      <Input
-        color="primary"
-        className="w-fit"
+      <FormInput
         label="Content"
         name="content"
-        variant="bordered"
-        isInvalid={!!errors?.fieldErrors?.content}
-        errorMessage={errors?.fieldErrors?.content}
+        error={errors?.fieldErrors?.content}
       />
       <div className="flex justify-center">
         <SubmitButton />
       </div>
-      {/* <p aria-live="polite" className="not-sr-only" role="status">
-        {JSON.parse(JSON.stringify(state?.message))}
-      </p> */}
     </form>
   );
 }
