@@ -13,7 +13,7 @@ type Props = SliceSimulatorParams & {
 };
 
 export default async function SliceSimulatorPage({ searchParams }: Props) {
-  const { secret } = await searchParams;
+  const { secret, state } = await searchParams;
   if (
     process.env.SLICE_SIMULATOR_SECRET &&
     secret !== process.env.SLICE_SIMULATOR_SECRET
@@ -21,7 +21,7 @@ export default async function SliceSimulatorPage({ searchParams }: Props) {
     redirect("/");
   }
 
-  const slices = getSlices(searchParams.state);
+  const slices = getSlices(state);
 
   return (
     <SliceSimulator>
