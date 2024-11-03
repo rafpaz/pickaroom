@@ -30,7 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const client = createClient();
   const { uid } = await params;
-  console.log("uid:", uid);
 
   const page = await client.getByUID("page", uid).catch((e) => {
     console.error(e);
