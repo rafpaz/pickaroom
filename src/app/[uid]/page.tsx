@@ -27,6 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+console.log("test");
+
 export default async function Page({ params }: Props) {
   const client = createClient();
   const { uid } = await params;
