@@ -6,17 +6,16 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
-type Params = { uid: string };
-
-export async function generateMetadata({
-  params,
-}: {
+type Props = {
   params: Params;
-}): Promise<Metadata> {
+};
+
+type Params = Promise<{ uid: string }>;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const client = createClient();
-  const page = await client
-    .getByUID("page", params.uid)
-    .catch(() => notFound());
+  const { uid } = await params;
+  const page = await client.getByUID("page", uid).catch(() => notFound());
 
   return {
     title: asText(page.data.title),
@@ -28,11 +27,16 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: Params }) {
+console.log("test");
+
+export default async function Page({ params }: Props) {
   const client = createClient();
-  const page = await client
-    .getByUID("page", params.uid)
-    .catch(() => notFound());
+  const { uid } = await params;
+
+  const page = await client.getByUID("page", uid).catch((e) => {
+    console.error(e);
+    return notFound();
+  });
 
   return <SliceZone slices={page.data.slices} components={components} />;
 }

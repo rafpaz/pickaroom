@@ -16,9 +16,6 @@ import cn from "@/lib/utils/cn";
 
 export default function CustomNavbar({ data }: GlobalNavDocument) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  console.log(" --------------------------------------");
-  console.log("CustomNavbar ~ isMenuOpen:", isMenuOpen);
-  console.log(" --------------------------------------");
   const scrollDirection = useScrollDirection();
 
   const handleItemClick = () => {
