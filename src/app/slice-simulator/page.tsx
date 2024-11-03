@@ -8,12 +8,15 @@ import { redirect } from "next/navigation";
 
 import { components } from "@/slices";
 
-export default function SliceSimulatorPage({
-  searchParams,
-}: SliceSimulatorParams & { searchParams: { secret?: string } }) {
+type Props = SliceSimulatorParams & {
+  searchParams: Promise<{ secret?: string }>;
+};
+
+export default async function SliceSimulatorPage({ searchParams }: Props) {
+  const { secret } = await searchParams;
   if (
     process.env.SLICE_SIMULATOR_SECRET &&
-    searchParams.secret !== process.env.SLICE_SIMULATOR_SECRET
+    secret !== process.env.SLICE_SIMULATOR_SECRET
   ) {
     redirect("/");
   }
