@@ -11,4 +11,5 @@ export const components = {
   quote: dynamic(() => import("./Quote")),
   text: dynamic(() => import("./Text")),
   text_with_image: dynamic(() => import("./TextWithImage")),
+  two_images: dynamic(() => import("./TwoImages")),
 };

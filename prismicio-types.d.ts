@@ -126,6 +126,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TwoImagesSlice
   | GridSlice
   | HeroSlice
   | QuoteSlice
@@ -1283,12 +1284,78 @@ export type TextWithImageSlice = prismic.SharedSlice<
   TextWithImageSliceVariation
 >;
 
+/**
+ * Primary content in *TwoImages → Default → Primary*
+ */
+export interface TwoImagesSliceDefaultPrimary {
+  /**
+   * First Image field in *TwoImages → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_images.default.primary.first_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  first_image: prismic.ImageField<never>;
+
+  /**
+   * Second Image field in *TwoImages → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_images.default.primary.second_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  second_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for TwoImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TwoImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TwoImagesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TwoImages*
+ */
+type TwoImagesSliceVariation = TwoImagesSliceDefault;
+
+/**
+ * TwoImages Shared Slice
+ *
+ * - **API ID**: `two_images`
+ * - **Description**: TwoImages
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TwoImagesSlice = prismic.SharedSlice<
+  "two_images",
+  TwoImagesSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
       repositoryNameOrEndpoint: string,
       options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
+  }
+
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
   }
 
   namespace Content {
@@ -1356,6 +1423,10 @@ declare module "@prismicio/client" {
       TextWithImageSliceDefault,
       TextWithImageSliceWithButton,
       TextWithImageSliceImageWithText,
+      TwoImagesSlice,
+      TwoImagesSliceDefaultPrimary,
+      TwoImagesSliceVariation,
+      TwoImagesSliceDefault,
     };
   }
 }

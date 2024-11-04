@@ -6,7 +6,7 @@
   "author": "Rafael Paz",
   "scripts": {
     "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
-    "next:dev": "next",
+    "next:dev": "next --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

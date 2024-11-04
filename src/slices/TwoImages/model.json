@@ -1,0 +1,35 @@
+{
+  "id": "two_images",
+  "type": "SharedSlice",
+  "name": "TwoImages",
+  "description": "TwoImages",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "first_image": {
+          "type": "Image",
+          "config": {
+            "label": "First Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "second_image": {
+          "type": "Image",
+          "config": {
+            "label": "Second Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
