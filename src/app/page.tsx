@@ -8,6 +8,7 @@ import { components } from "@/slices";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
+
   const page = await client.getByUID("page", "home").catch(() => notFound());
 
   return {

@@ -1,4 +1,4 @@
-import type { ElementType, ReactNode, FC } from "react";
+import type { ElementType, ReactNode } from "react";
 import { createElement } from "react";
 
 interface ConditionalWrapProps<T extends ElementType> {
