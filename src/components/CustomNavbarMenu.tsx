@@ -1,5 +1,5 @@
-import { Accordion, AccordionItem } from "@nextui-org/accordion";
-import { NavbarMenu, NavbarMenuItem } from "@nextui-org/navbar";
+import { Accordion, AccordionItem } from "@heroui/accordion";
+import { NavbarMenu, NavbarMenuItem } from "@heroui/navbar";
 import { asText, SliceZone } from "@prismicio/client";
 import { NavItemSlice } from "../../prismicio-types";
 import { PrismicText } from "@prismicio/react";

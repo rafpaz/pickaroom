@@ -5,7 +5,7 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarMenuToggle,
-} from "@nextui-org/navbar";
+} from "@heroui/navbar";
 import { Logo } from "./Logo";
 import { SliceZone } from "@prismicio/react";
 import { GlobalNavDocument } from "../../prismicio-types";
