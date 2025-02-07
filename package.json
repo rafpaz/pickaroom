@@ -14,16 +14,16 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@nextui-org/accordion": "^2.2.7",
-    "@nextui-org/button": "^2.2.9",
-    "@nextui-org/dropdown": "^2.3.9",
-    "@nextui-org/navbar": "^2.2.8",
-    "@nextui-org/popover": "^2.3.9",
-    "@nextui-org/system": "^2.4.6",
-    "@nextui-org/theme": "^2.4.5",
-    "@prismicio/client": "^7.13.1",
-    "@prismicio/next": "^1.7.1",
-    "@prismicio/react": "^2.9.1",
+    "@heroui/accordion": "2.2.8",
+    "@heroui/button": "2.2.10",
+    "@heroui/dropdown": "2.3.10",
+    "@heroui/navbar": "2.2.9",
+    "@heroui/popover": "2.3.10",
+    "@heroui/system": "2.4.7",
+    "@heroui/theme": "2.4.6",
+    "@prismicio/client": "^7.16.0",
+    "@prismicio/next": "^2.0.0",
+    "@prismicio/react": "^3.0.0",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
     "clsx": "^2.1.1",
@@ -49,8 +49,8 @@
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
-    "slice-machine-ui": "^2.11.1",
+    "slice-machine-ui": "^2.12.3",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   }
 }
