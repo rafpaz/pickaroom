@@ -11,6 +11,17 @@ type GlobalNavDocumentDataSlicesSlice = NavItemSlice;
  */
 interface GlobalNavDocumentData {
   /**
+   * Logo field in *Global Nav*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: global_nav.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *Global Nav*
    *
    * - **Field Type**: Slice Zone
@@ -56,15 +67,15 @@ interface HomepageDocumentData {
   title: prismic.KeyTextField;
 
   /**
-   * image field in *Homepage*
+   * logo field in *Homepage*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.image
+   * - **API ID Path**: homepage.logo
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<never>;
+  logo: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *Homepage*
@@ -287,6 +298,26 @@ export interface GridSliceDefaultPrimaryItemsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   description: prismic.KeyTextField;
+
+  /**
+   * RTLabel field in *Grid → Default → Primary → items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grid.default.primary.items[].rtlabel
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  rtlabel: prismic.RichTextField;
+
+  /**
+   * RTDescription field in *Grid → Default → Primary → items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grid.default.primary.items[].rtdescription
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  rtdescription: prismic.RichTextField;
 }
 
 /**

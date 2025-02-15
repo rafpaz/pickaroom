@@ -1,13 +1,11 @@
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import React from "react";
+import { ImageField } from "@prismicio/client";
 
-export const Logo = () => (
+export const Logo = ({ image }: { image: ImageField }) => (
   <PrismicNextLink href="/">
     <div className="flex flex-col">
-      <div className="text-xl font-bold tracking-[.5em] text-black">
-        PICKAROOM
-      </div>
-      <div className="text-xl font-bold text-black">Interior design studio</div>
+      <PrismicNextImage field={image} height={200} width={200} />
     </div>
   </PrismicNextLink>
 );

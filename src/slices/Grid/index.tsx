@@ -29,8 +29,14 @@ const Grid = ({ slice }: GridProps): JSX.Element => {
               <div className="aspect-w-[214] aspect-h-[270]">
                 <PrismicNextImage field={item.image} />
               </div>
-              <h2 className="font-bold mt-4 tracking-widest">{item.label}</h2>
-              <div>{item.description}</div>
+              <div className={"mt-4"}>
+                <PrismicRichText
+                  field={item.rtlabel}
+                  globalClassName={"tracking-widest mb-0"}
+                />
+
+                <PrismicRichText field={item.rtdescription} />
+              </div>
             </div>
           ))}
         </div>

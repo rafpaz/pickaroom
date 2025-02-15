@@ -13,10 +13,10 @@
           "placeholder": ""
         }
       },
-      "image": {
+      "logo": {
         "type": "Image",
         "config": {
-          "label": "image",
+          "label": "logo",
           "constraint": {},
           "thumbnails": []
         }

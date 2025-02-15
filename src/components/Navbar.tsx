@@ -30,13 +30,13 @@ export default function CustomNavbar({ data }: GlobalNavDocument) {
       maxWidth="xl"
       className={cn(
         "top-0 fixed transition-opacity bg-custom-gradient backdrop-blur-[1px] duration-500",
-        scrollDirection === "down" && "opacity-0"
+        scrollDirection === "down" && "opacity-0",
       )}
       height={"124px"}
     >
       <NavbarContent>
         <NavbarBrand>
-          <Logo />
+          <Logo image={data.logo} />
         </NavbarBrand>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
