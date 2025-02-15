@@ -39,11 +39,11 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(@prismicio/client@7.16.0)(react@19.0.0)
       '@vercel/analytics':
-        specifier: ^1.4.1
-        version: 1.4.1(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+        specifier: ^1.5.0
+        version: 1.5.0(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
       '@vercel/speed-insights':
-        specifier: ^1.1.0
-        version: 1.1.0(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+        specifier: ^1.2.0
+        version: 1.2.0(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -70,8 +70,8 @@ importers:
         version: 2.6.0
     devDependencies:
       '@slicemachine/adapter-next':
-        specifier: ^0.3.61
-        version: 0.3.61(@prismicio/types@0.2.9)(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+        specifier: ^0.3.66
+        version: 0.3.66(@prismicio/types@0.2.9)(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
       '@tailwindcss/aspect-ratio':
         specifier: ^0.4.2
         version: 0.4.2(tailwindcss@3.4.17)
@@ -638,14 +638,6 @@ packages:
     resolution: {integrity: sha512-aBDwGghM8LqXOvdbJWJScBTpY8wuVl3CyCWFqiFwqC8l5SPrQtD2CwEVX0UCB0azPlisb7l7al5Wcg2nxQ6xrQ==}
     engines: {node: '>=14.15.0'}
 
-  '@prismicio/types-internal@3.2.0':
-    resolution: {integrity: sha512-e/eps+d/LPPn9FlzmjxLFvZV+SU6lu65zUH53BrS1Tm0JBQjyL9zSWBX96TrSGnuzwxf5LleYlyc+KBs8pYSkg==}
-    engines: {node: '>=12.7.0'}
-    peerDependencies:
-      fp-ts: ^2.11.8
-      io-ts: ^2.2.16
-      io-ts-types: ^0.5.16
-
   '@prismicio/types-internal@3.3.0':
     resolution: {integrity: sha512-5Vg0oM6FlFa5lgF7RirGf55/SZ/TJ/26tNNUDRiwZSbs8VZUMbIO21IkjTuc6lFn+hKWKCXRxB6+lgmdvaZ2QQ==}
     engines: {node: '>=12.7.0'}
@@ -875,8 +867,8 @@ packages:
   '@sideway/pinpoint@2.0.0':
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
 
-  '@slicemachine/adapter-next@0.3.61':
-    resolution: {integrity: sha512-Hnhx3FlxUaehK2T7B9GvX4s1inbl1GNoznIZsngQd5xpVCT7QQID0o6E6uSI0DkDoM7uGa0GOqm40171mJzKSA==}
+  '@slicemachine/adapter-next@0.3.66':
+    resolution: {integrity: sha512-TIU32f9vfBmG97NuCt4Ug4wgL7jbhVhoWgF1TXUHmw90N7hQwgg+3B29LQzE4nmrQMrbU04EKdEH4BIadYV9BA==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       next: ^11 || ^12 || ^13 || ^14 || ^15.0.0-rc.0
@@ -890,10 +882,6 @@ packages:
     peerDependenciesMeta:
       msw:
         optional: true
-
-  '@slicemachine/plugin-kit@0.4.61':
-    resolution: {integrity: sha512-4SqfKGHW1JXMynm04d3I4wTBWqjpfFE8SdD6wg474SqjquXzeEFTUgLNZMhrfNZJGp0YjrOhcUd2wuWisgj6zQ==}
-    engines: {node: '>=14.15.0'}
 
   '@slicemachine/plugin-kit@0.4.65':
     resolution: {integrity: sha512-JzfkVDPEApv3oFPS2Y9H07dV0kJge3BxfjQ8G3s6EABQlf4hNTruI+4a9byvOffvg0YJwCe26Ce057K8xkm6Ng==}
@@ -999,8 +987,8 @@ packages:
     resolution: {integrity: sha512-PChz8UaKQAVNHghsHcPyx1OMHoFRUEA7rJSK/mDhdq85bk+PLsUHUBqTQTFt18VJZbmxBovM65fezlheQRsSDA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@vercel/analytics@1.4.1':
-    resolution: {integrity: sha512-ekpL4ReX2TH3LnrRZTUKjHHNpNy9S1I7QmS+g/RQXoSUQ8ienzosuX7T9djZ/s8zPhBx1mpHP/Rw5875N+zQIQ==}
+  '@vercel/analytics@1.5.0':
+    resolution: {integrity: sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==}
     peerDependencies:
       '@remix-run/react': ^2
       '@sveltejs/kit': ^1 || ^2
@@ -1025,8 +1013,8 @@ packages:
       vue-router:
         optional: true
 
-  '@vercel/speed-insights@1.1.0':
-    resolution: {integrity: sha512-rAXxuhhO4mlRGC9noa5F7HLMtGg8YF1zAN6Pjd1Ny4pII4cerhtwSG4vympbCl+pWkH7nBS9kVXRD4FAn54dlg==}
+  '@vercel/speed-insights@1.2.0':
+    resolution: {integrity: sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==}
     peerDependencies:
       '@sveltejs/kit': ^1 || ^2
       next: '>= 13'
@@ -3694,16 +3682,6 @@ snapshots:
       '@types/statuses': 2.0.5
       statuses: 2.0.1
 
-  '@prismicio/types-internal@3.2.0(fp-ts@2.16.9)(io-ts-types@0.5.19(fp-ts@2.16.9)(io-ts@2.2.21(fp-ts@2.16.9))(monocle-ts@2.3.13(fp-ts@2.16.9))(newtype-ts@0.3.5(fp-ts@2.16.9)(monocle-ts@2.3.13(fp-ts@2.16.9))))(io-ts@2.2.21(fp-ts@2.16.9))':
-    dependencies:
-      fp-ts: 2.16.9
-      io-ts: 2.2.21(fp-ts@2.16.9)
-      io-ts-types: 0.5.19(fp-ts@2.16.9)(io-ts@2.2.21(fp-ts@2.16.9))(monocle-ts@2.3.13(fp-ts@2.16.9))(newtype-ts@0.3.5(fp-ts@2.16.9)(monocle-ts@2.3.13(fp-ts@2.16.9)))
-      monocle-ts: 2.3.13(fp-ts@2.16.9)
-      newtype-ts: 0.3.5(fp-ts@2.16.9)(monocle-ts@2.3.13(fp-ts@2.16.9))
-      tslib: 2.8.1
-      uuid: 9.0.1
-
   '@prismicio/types-internal@3.3.0(fp-ts@2.16.9)(io-ts-types@0.5.19(fp-ts@2.16.9)(io-ts@2.2.21(fp-ts@2.16.9))(monocle-ts@2.3.13(fp-ts@2.16.9))(newtype-ts@0.3.5(fp-ts@2.16.9)(monocle-ts@2.3.13(fp-ts@2.16.9))))(io-ts@2.2.21(fp-ts@2.16.9))':
     dependencies:
       fp-ts: 2.16.9
@@ -4016,11 +3994,11 @@ snapshots:
 
   '@sideway/pinpoint@2.0.0': {}
 
-  '@slicemachine/adapter-next@0.3.61(@prismicio/types@0.2.9)(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)':
+  '@slicemachine/adapter-next@0.3.66(@prismicio/types@0.2.9)(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@prismicio/simulator': 0.1.4
-      '@prismicio/types-internal': 3.2.0(fp-ts@2.16.9)(io-ts-types@0.5.19(fp-ts@2.16.9)(io-ts@2.2.21(fp-ts@2.16.9))(monocle-ts@2.3.13(fp-ts@2.16.9))(newtype-ts@0.3.5(fp-ts@2.16.9)(monocle-ts@2.3.13(fp-ts@2.16.9))))(io-ts@2.2.21(fp-ts@2.16.9))
-      '@slicemachine/plugin-kit': 0.4.61(@prismicio/types@0.2.9)
+      '@prismicio/types-internal': 3.3.0(fp-ts@2.16.9)(io-ts-types@0.5.19(fp-ts@2.16.9)(io-ts@2.2.21(fp-ts@2.16.9))(monocle-ts@2.3.13(fp-ts@2.16.9))(newtype-ts@0.3.5(fp-ts@2.16.9)(monocle-ts@2.3.13(fp-ts@2.16.9))))(io-ts@2.2.21(fp-ts@2.16.9))
+      '@slicemachine/plugin-kit': 0.4.65(@prismicio/types@0.2.9)
       common-tags: 1.8.2
       fp-ts: 2.16.9
       io-ts: 2.2.21(fp-ts@2.16.9)
@@ -4065,22 +4043,6 @@ snapshots:
     transitivePeerDependencies:
       - '@prismicio/types'
       - encoding
-
-  '@slicemachine/plugin-kit@0.4.61(@prismicio/types@0.2.9)':
-    dependencies:
-      '@prismicio/client': 7.16.0
-      common-tags: 1.8.2
-      defu: 6.1.4
-      dotenv: 16.3.1
-      fp-ts: 2.16.9
-      fs-extra: 11.1.1
-      io-ts: 2.2.21(fp-ts@2.16.9)
-      io-ts-reporters: 2.0.1(fp-ts@2.16.9)(io-ts@2.2.21(fp-ts@2.16.9))
-      p-limit: 4.0.0
-      prettier: 3.4.2
-      prismic-ts-codegen: 0.1.23(@prismicio/client@7.16.0)(@prismicio/types@0.2.9)
-    transitivePeerDependencies:
-      - '@prismicio/types'
 
   '@slicemachine/plugin-kit@0.4.65(@prismicio/types@0.2.9)':
     dependencies:
@@ -4218,12 +4180,12 @@ snapshots:
       '@typescript-eslint/types': 8.12.2
       eslint-visitor-keys: 3.4.3
 
-  '@vercel/analytics@1.4.1(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)':
+  '@vercel/analytics@1.5.0(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)':
     optionalDependencies:
       next: 15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
 
-  '@vercel/speed-insights@1.1.0(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)':
+  '@vercel/speed-insights@1.2.0(next@15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)':
     optionalDependencies:
       next: 15.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
