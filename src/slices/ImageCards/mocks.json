@@ -23,27 +23,70 @@
 							[
 								"image",
 								{
-									"url": "https://images.unsplash.com/photo-1613260976142-3e9700b7a6a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE5NTMwMDQ2fDA&ixlib=rb-4.0.3&q=85&rect=0%2C444%2C4960%2C2705&w=2200&h=1200",
-									"alt": "orange fruits on blue ceramic bowl",
 									"origin": {
-										"id": "-QOUBSKHvAM",
-										"url": "https://images.unsplash.com/photo-1613260976142-3e9700b7a6a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE5NTMwMDQ2fDA&ixlib=rb-4.0.3&q=85",
-										"width": 4960,
-										"height": 3594
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
+										"width": 3344,
+										"height": 2509
 									},
+									"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?rect=0%2C343%2C3344%2C1824&w=2200&h=1200",
 									"width": 2200,
 									"height": 1200,
 									"edit": {
-										"background": "transparent",
 										"zoom": 1,
 										"crop": {
 											"x": 0,
-											"y": 444
-										}
+											"y": 343
+										},
+										"background": "transparent"
 									},
 									"credits": null,
+									"alt": null,
 									"__TYPE__": "ImageContent",
-									"thumbnails": {}
+									"thumbnails": {
+										"portrait": {
+											"origin": {
+												"id": "portrait",
+												"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+												"width": 4380,
+												"height": 2895
+											},
+											"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?rect=1400%2C0%2C1579%2C2895&w=1200&h=2200",
+											"width": 1200,
+											"height": 2200,
+											"edit": {
+												"zoom": 1,
+												"crop": {
+													"x": 1400,
+													"y": 0
+												},
+												"background": "transparent"
+											},
+											"credits": null,
+											"alt": null
+										},
+										"square": {
+											"origin": {
+												"id": "square",
+												"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+												"width": 3168,
+												"height": 4752
+											},
+											"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?rect=0%2C792%2C3168%2C3168&w=1200&h=1200",
+											"width": 1200,
+											"height": 1200,
+											"edit": {
+												"zoom": 1,
+												"crop": {
+													"x": 0,
+													"y": 792
+												},
+												"background": "transparent"
+											},
+											"credits": null,
+											"alt": null
+										}
+									}
 								}
 							],
 							[
@@ -63,6 +106,7 @@
 							[
 								"buttonLink",
 								{
+									"key": "6014b94b-554c-4171-807d-82ee07f5e8fa",
 									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
@@ -84,5 +128,189 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "portrait",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Medicine"
+						}
+					}
+				]
+			},
+			"cards": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+										"width": 3199,
+										"height": 3199
+									},
+									"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?rect=727%2C0%2C1745%2C3199&w=1200&h=2200",
+									"width": 1200,
+									"height": 2200,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 727,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Proident anim ad eu anim qui enim eiusmod cillum excepteur velit quis occaecat consectetur velit ullamco. Nisi tempor nostrud dolore."
+											}
+										}
+									]
+								}
+							],
+							[
+								"buttonLink",
+								{
+									"key": "4ecc9cde-417f-4088-947a-0c9cafdfd638",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io"
+									}
+								}
+							],
+							[
+								"buttonText",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "stream",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "square",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Chief"
+						}
+					}
+				]
+			},
+			"cards": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+										"width": 4172,
+										"height": 4000
+									},
+									"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?rect=86%2C0%2C4000%2C4000&w=1200&h=1200",
+									"width": 1200,
+									"height": 1200,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 86,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Incididunt cupidatat voluptate deserunt reprehenderit ad reprehenderit dolor aliquip anim eiusmod cupidatat dolore consequat in eu. Lorem tempor mollit tempor irure aliquip in laborum labore eu sit nulla eiusmod eu fugiat ullamco. Dolore quis pariatur qui ullamco ullamco aliqua tempor."
+											}
+										}
+									]
+								}
+							],
+							[
+								"buttonLink",
+								{
+									"key": "a10815c4-5f92-4267-b78d-4fcc114be147",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io"
+									}
+								}
+							],
+							[
+								"buttonText",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "tune",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

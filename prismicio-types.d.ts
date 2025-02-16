@@ -318,6 +318,16 @@ export interface GridSliceDefaultPrimaryItemsItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   rtdescription: prismic.RichTextField;
+
+  /**
+   * link field in *Grid → Default → Primary → items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grid.default.primary.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -670,7 +680,7 @@ export interface ImageCardsSliceDefaultPrimaryCardsItem {
    * - **API ID Path**: image_cards.default.primary.cards[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<never>;
+  image: prismic.ImageField<"portrait" | "square">;
 
   /**
    * Text field in *ImageCards → Default → Primary → Cards*
@@ -698,6 +708,96 @@ export interface ImageCardsSliceDefaultPrimaryCardsItem {
    * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: image_cards.default.primary.cards[].buttonText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttonText: prismic.KeyTextField;
+}
+
+/**
+ * Item in *ImageCards → portrait → Primary → Cards*
+ */
+export interface ImageCardsSlicePortraitPrimaryCardsItem {
+  /**
+   * Image field in *ImageCards → portrait → Primary → Cards*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.portrait.primary.cards[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *ImageCards → portrait → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.portrait.primary.cards[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Button Link field in *ImageCards → portrait → Primary → Cards*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.portrait.primary.cards[].buttonLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonLink: prismic.LinkField;
+
+  /**
+   * Button Text field in *ImageCards → portrait → Primary → Cards*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.portrait.primary.cards[].buttonText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttonText: prismic.KeyTextField;
+}
+
+/**
+ * Item in *ImageCards → square → Primary → Cards*
+ */
+export interface ImageCardsSliceSquarePrimaryCardsItem {
+  /**
+   * Image field in *ImageCards → square → Primary → Cards*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.square.primary.cards[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *ImageCards → square → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.square.primary.cards[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Button Link field in *ImageCards → square → Primary → Cards*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.square.primary.cards[].buttonLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonLink: prismic.LinkField;
+
+  /**
+   * Button Text field in *ImageCards → square → Primary → Cards*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.square.primary.cards[].buttonText
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   buttonText: prismic.KeyTextField;
@@ -742,9 +842,88 @@ export type ImageCardsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ImageCards → portrait → Primary*
+ */
+export interface ImageCardsSlicePortraitPrimary {
+  /**
+   * Heading field in *ImageCards → portrait → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.portrait.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Cards field in *ImageCards → portrait → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.portrait.primary.cards[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  cards: prismic.GroupField<Simplify<ImageCardsSlicePortraitPrimaryCardsItem>>;
+}
+
+/**
+ * portrait variation for ImageCards Slice
+ *
+ * - **API ID**: `portrait`
+ * - **Description**: ImageCards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageCardsSlicePortrait = prismic.SharedSliceVariation<
+  "portrait",
+  Simplify<ImageCardsSlicePortraitPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *ImageCards → square → Primary*
+ */
+export interface ImageCardsSliceSquarePrimary {
+  /**
+   * Heading field in *ImageCards → square → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.square.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Cards field in *ImageCards → square → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_cards.square.primary.cards[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  cards: prismic.GroupField<Simplify<ImageCardsSliceSquarePrimaryCardsItem>>;
+}
+
+/**
+ * square variation for ImageCards Slice
+ *
+ * - **API ID**: `square`
+ * - **Description**: ImageCards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageCardsSliceSquare = prismic.SharedSliceVariation<
+  "square",
+  Simplify<ImageCardsSliceSquarePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *ImageCards*
  */
-type ImageCardsSliceVariation = ImageCardsSliceDefault;
+type ImageCardsSliceVariation =
+  | ImageCardsSliceDefault
+  | ImageCardsSlicePortrait
+  | ImageCardsSliceSquare;
 
 /**
  * ImageCards Shared Slice
@@ -1425,8 +1604,14 @@ declare module "@prismicio/client" {
       ImageCardsSlice,
       ImageCardsSliceDefaultPrimaryCardsItem,
       ImageCardsSliceDefaultPrimary,
+      ImageCardsSlicePortraitPrimaryCardsItem,
+      ImageCardsSlicePortraitPrimary,
+      ImageCardsSliceSquarePrimaryCardsItem,
+      ImageCardsSliceSquarePrimary,
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
+      ImageCardsSlicePortrait,
+      ImageCardsSliceSquare,
       NavItemSlice,
       NavItemSliceDefaultPrimary,
       NavItemSliceMenuPrimaryMenuLinksItem,

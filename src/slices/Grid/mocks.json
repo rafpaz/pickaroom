@@ -89,6 +89,18 @@
 										}
 									]
 								}
+							],
+							[
+								"link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "0cc70de0-f552-483e-b2a1-f334eeb2a538",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "ability"
+									}
+								}
 							]
 						]
 					},
@@ -163,6 +175,18 @@
 											}
 										}
 									]
+								}
+							],
+							[
+								"link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "6403f9e1-63b7-4e9c-8f46-eebe2550ca9d",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io",
+										"text": "cast"
+									}
 								}
 							]
 						]
@@ -239,6 +263,18 @@
 										}
 									]
 								}
+							],
+							[
+								"link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "2669a48a-f6dc-4daf-9e12-d0c8053d6cd5",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "mark"
+									}
+								}
 							]
 						]
 					},
@@ -313,6 +349,18 @@
 											}
 										}
 									]
+								}
+							],
+							[
+								"link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "0185f541-2227-4e49-8d08-e03d756bcb54",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "fifty"
+									}
 								}
 							]
 						]
