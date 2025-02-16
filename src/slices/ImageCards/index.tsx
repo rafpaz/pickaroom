@@ -8,7 +8,7 @@ import { PrismicRichText } from "@/components/PrismicRichText";
 import ConditionalWrap from "@/components/ConditionalWrap";
 
 type ImageCardProps = {
-  card: Content.ImageCardsSliceDefaultPrimaryCardsItem;
+  card: Content.ImageCardsSlicePortraitPrimaryCardsItem;
 };
 
 const ImageCard = ({ card }: ImageCardProps) => {
