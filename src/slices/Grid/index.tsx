@@ -1,5 +1,6 @@
 import { Bounded } from "@/components/Bounded";
 import { PrismicRichText } from "@/components/PrismicRichText";
+import { OptionalPrismicNextLink } from "@/components/OptionalPrismicNextLink";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
@@ -25,7 +26,7 @@ const Grid = ({ slice }: GridProps): JSX.Element => {
         </CustomAnimation>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {slice.primary.items.map((item, index) => (
-            <div key={index}>
+            <OptionalPrismicNextLink key={index} field={item.link}>
               <div className="aspect-w-[214] aspect-h-[270]">
                 <PrismicNextImage field={item.image} />
               </div>
@@ -37,7 +38,7 @@ const Grid = ({ slice }: GridProps): JSX.Element => {
 
                 <PrismicRichText field={item.rtdescription} />
               </div>
-            </div>
+            </OptionalPrismicNextLink>
           ))}
         </div>
       </Bounded>
