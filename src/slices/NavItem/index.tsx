@@ -32,7 +32,7 @@ const NavItem = ({ slice }: NavItemProps): JSX.Element => {
   }
   if (slice.variation === "menu") {
     return (
-      <Dropdown className="bg-white">
+      <Dropdown className="bg-white" shouldBlockScroll={false}>
         <NavbarItem>
           <DropdownTrigger className="p-5">
             <Button
