@@ -448,6 +448,16 @@ export interface HeroSliceDefaultPrimary {
   backgroundImage: prismic.ImageField<never>;
 
   /**
+   * mobileImage field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.mobileImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  mobileImage: prismic.ImageField<never>;
+
+  /**
    * Text Location field in *Hero → Default → Primary*
    *
    * - **Field Type**: Select

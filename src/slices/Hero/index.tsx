@@ -25,19 +25,41 @@ type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero = ({ slice }: HeroProps) => {
   const backgroundImage = slice.primary.backgroundImage;
+  const mobileBackgroundImage = slice.primary.mobileImage;
 
   return (
     <section className="relative min-h-screen mb-8 overflow-hidden">
-      {isFilled.image(backgroundImage) && (
-        <PrismicNextImage
-          field={backgroundImage}
-          alt=""
-          fill={true}
-          className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop"
-          priority
-        />
+      {isFilled.image(mobileBackgroundImage) ? (
+        <>
+          {/* Default image for desktop */}
+          <PrismicNextImage
+            field={backgroundImage}
+            alt=""
+            fill={true}
+            className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop hidden sm:block"
+            priority
+          />
+          {/* Mobile image for mobile devices */}
+          <PrismicNextImage
+            field={mobileBackgroundImage}
+            alt=""
+            fill={true}
+            className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop block sm:hidden"
+            priority
+          />
+        </>
+      ) : (
+        isFilled.image(backgroundImage) && (
+          <PrismicNextImage
+            field={backgroundImage}
+            alt=""
+            fill={true}
+            className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop"
+            priority
+          />
+        )
       )}
-      <Bounded yPadding="sm" className="relative min-h-screen">
+      <Bounded yPadding="sm" className="relative h-screen">
         {slice.variation === "default" && (
           <div
             className={cn(
@@ -49,7 +71,7 @@ const Hero = ({ slice }: HeroProps) => {
               slice.primary.text_location === "Center Right" &&
                 "items-center justify-items-end",
               slice.primary.text_location === "Bottom Left" &&
-                "justify-items-start items-end"
+                "justify-items-start items-end",
             )}
           >
             <div className="max-w-lg text-left text-black">

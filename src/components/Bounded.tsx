@@ -22,9 +22,9 @@ export function Bounded({
       className={cn(
         yPadding === "none" && "",
         yPadding === "sm" && "py-8 md:py-10",
-        yPadding === "base" && "py-20 md:py-28",
+        yPadding === "base" && "py-16 md:py-16",
         yPadding === "lg" && "py-32 md:py-48",
-        className
+        className,
       )}
     >
       <div className="px-6 mx-auto w-full max-w-7xl">{children}</div>

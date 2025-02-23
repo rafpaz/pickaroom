@@ -61,6 +61,14 @@
             "thumbnails": []
           }
         },
+        "mobileImage": {
+          "type": "Image",
+          "config": {
+            "label": "mobileImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "text_location": {
           "type": "Select",
           "config": {
