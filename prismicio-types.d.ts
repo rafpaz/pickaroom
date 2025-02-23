@@ -448,7 +448,7 @@ export interface HeroSliceDefaultPrimary {
   backgroundImage: prismic.ImageField<never>;
 
   /**
-   * mobileImage field in *Hero → Default → Primary*
+   * Mobile Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*

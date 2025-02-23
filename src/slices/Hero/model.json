@@ -64,7 +64,7 @@
         "mobileImage": {
           "type": "Image",
           "config": {
-            "label": "mobileImage",
+            "label": "Mobile Image",
             "constraint": {},
             "thumbnails": []
           }
