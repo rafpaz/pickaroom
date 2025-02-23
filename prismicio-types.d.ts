@@ -548,6 +548,16 @@ export interface HeroSliceTwoButtonsPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   right_button_text: prismic.KeyTextField;
+
+  /**
+   * Mobile Image field in *Hero → Two Buttons → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.twoButtons.primary.mobileImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  mobileImage: prismic.ImageField<never>;
 }
 
 /**
@@ -576,6 +586,16 @@ export interface HeroSliceEmptyPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   backgroundImage: prismic.ImageField<never>;
+
+  /**
+   * Mobile Image field in *Hero → Empty → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.empty.primary.mobileImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  mobileImage: prismic.ImageField<never>;
 }
 
 /**
