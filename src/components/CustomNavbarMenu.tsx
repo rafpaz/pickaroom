@@ -15,7 +15,7 @@ const CustomNavbarMenu: React.FC<NavbarMenuItemProps> = ({
   handleItemClick,
 }) => {
   return (
-    <NavbarMenu>
+    <NavbarMenu className={"opacity-90"}>
       {slices.map((slice, index) =>
         slice.variation === "default" ? (
           <NavbarMenuItem key={index}>
@@ -27,14 +27,15 @@ const CustomNavbarMenu: React.FC<NavbarMenuItemProps> = ({
             </PrismicNextLink>
           </NavbarMenuItem>
         ) : (
-          <NavbarMenuItem key={index} className="p-0">
+          <NavbarMenuItem key={index} className="p-0 ">
             <Accordion className="p-0">
               <AccordionItem
                 title={asText(slice.primary.label)}
                 classNames={{
                   trigger: "p-0",
                   titleWrapper: "flex-grow-0",
-                  content: "px-4",
+                  content: "px-4 text-lg",
+                  title: "text-lg",
                 }}
               >
                 {slice.primary.menu_links.map((item, index) => (
@@ -61,7 +62,7 @@ const CustomNavbarMenu: React.FC<NavbarMenuItemProps> = ({
               </AccordionItem>
             </Accordion>
           </NavbarMenuItem>
-        )
+        ),
       )}
     </NavbarMenu>
   );

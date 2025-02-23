@@ -61,6 +61,14 @@
             "thumbnails": []
           }
         },
+        "mobileImage": {
+          "type": "Image",
+          "config": {
+            "label": "Mobile Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "text_location": {
           "type": "Select",
           "config": {
@@ -133,6 +141,14 @@
             "label": "Right Button Text",
             "placeholder": ""
           }
+        },
+        "mobileImage": {
+          "type": "Image",
+          "config": {
+            "label": "Mobile Image",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {},
@@ -149,6 +165,14 @@
           "type": "Image",
           "config": {
             "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "mobileImage": {
+          "type": "Image",
+          "config": {
+            "label": "Mobile Image",
             "constraint": {},
             "thumbnails": []
           }
