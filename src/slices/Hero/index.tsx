@@ -1,3 +1,5 @@
+"use client";
+
 import { type Content, isFilled } from "@prismicio/client";
 import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 import type { SliceComponentProps, JSXMapSerializer } from "@prismicio/react";
@@ -8,6 +10,7 @@ import { PrismicRichText } from "@/components/PrismicRichText";
 import ConditionalWrap from "@/components/ConditionalWrap";
 import cn from "@/lib/utils/cn";
 import CustomAnimation from "@/components/CustomAnimation";
+import useViewportHeight from "@/components/__hooks__/useViewportHeight";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -24,27 +27,32 @@ const components: JSXMapSerializer = {
 type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero = ({ slice }: HeroProps) => {
+  useViewportHeight();
+
   const backgroundImage = slice.primary.backgroundImage;
   const mobileBackgroundImage = slice.primary.mobileImage;
 
   return (
-    <section className="relative min-h-screen mb-8 overflow-hidden">
+    <section
+      style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+      className="relative mb-8 overflow-hidden"
+    >
       {isFilled.image(mobileBackgroundImage) ? (
         <>
-          {/* Default image for desktop */}
+          {/* Desktop image */}
           <PrismicNextImage
             field={backgroundImage}
             alt=""
-            fill={true}
-            className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop hidden sm:block"
+            fill
+            className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop hidden md:block"
             priority
           />
-          {/* Mobile image for mobile devices */}
+          {/* Mobile image */}
           <PrismicNextImage
             field={mobileBackgroundImage}
             alt=""
-            fill={true}
-            className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop block sm:hidden"
+            fill
+            className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop block md:hidden"
             priority
           />
         </>
@@ -53,17 +61,22 @@ const Hero = ({ slice }: HeroProps) => {
           <PrismicNextImage
             field={backgroundImage}
             alt=""
-            fill={true}
+            fill
             className="pointer-events-none select-none object-cover opacity-60 animate-kenburnsTop"
             priority
           />
         )
       )}
-      <Bounded yPadding="sm" className="relative h-screen">
+      <Bounded
+        yPadding="sm"
+        className="relative"
+        style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+      >
         {slice.variation === "default" && (
           <div
             className={cn(
-              "grid gap-8 h-[calc(100vh-80px)]",
+              // On larger screens, you might want a slightly different height
+              "grid gap-8 h-full md:h-[calc(100vh-80px)]",
               slice.primary.text_location === "Center" &&
                 "items-center justify-items-center",
               slice.primary.text_location === "Center Left" &&
@@ -101,7 +114,7 @@ const Hero = ({ slice }: HeroProps) => {
           </div>
         )}
         {slice.variation === "twoButtons" && (
-          <div className="grid justify-items-center items-center min-h-screen gap-8">
+          <div className="grid justify-items-center items-center h-full gap-8">
             <div className="flex flex-col sm:flex-row gap-4">
               {isFilled.link(slice.primary.leftButton) && (
                 <PrismicNextLink

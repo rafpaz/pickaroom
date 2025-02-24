@@ -1,5 +1,5 @@
 import cn from "@/lib/utils/cn";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 type BoundedProps = {
   as?: "div" | "section" | "header";
@@ -7,6 +7,7 @@ type BoundedProps = {
   collapsible?: boolean;
   className?: string;
   children?: ReactNode;
+  style?: CSSProperties;
 };
 
 export function Bounded({
