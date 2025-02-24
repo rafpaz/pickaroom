@@ -7,7 +7,6 @@ function useViewportHeight() {
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
     setVh();
-    window.addEventListener("resize", setVh);
     return () => window.removeEventListener("resize", setVh);
   }, []);
 }
