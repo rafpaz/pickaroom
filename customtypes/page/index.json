@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact_us_form": {
+              "type": "SharedSlice"
+            },
             "two_images": {
               "type": "SharedSlice"
             },

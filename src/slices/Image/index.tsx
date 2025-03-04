@@ -4,6 +4,7 @@ import { PrismicNextImage } from "@prismicio/next";
 
 import { Bounded } from "@/components/Bounded";
 import cn from "@/lib/utils/cn";
+import CustomImage from "@/components/CutomImage";
 
 type ImageProps = SliceComponentProps<Content.ImageSlice>;
 
@@ -18,7 +19,13 @@ const Image = ({ slice, index }: ImageProps) => {
     >
       {isFilled.image(image) && (
         <div className="bg-gray-100">
-          <PrismicNextImage field={image} sizes="100vw" className="w-full" />
+          {/*<PrismicNextImage field={image} sizes="100vw" className="w-full" />*/}
+          <CustomImage
+            field={image}
+            sizes="100vw"
+            className="w-full h-full"
+            parentClassName="w-full h-full"
+          />
         </div>
       )}
     </Bounded>
