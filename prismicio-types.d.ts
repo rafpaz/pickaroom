@@ -137,6 +137,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ContactUsFormSlice
   | TwoImagesSlice
   | GridSlice
   | HeroSlice
@@ -266,6 +267,61 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Primary content in *ContactUsForm → Default → Primary*
+ */
+export interface ContactUsFormSliceDefaultPrimary {
+  /**
+   * Title field in *ContactUsForm → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us_form.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * source field in *ContactUsForm → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us_form.default.primary.source
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  source: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ContactUsForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactUsFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactUsFormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactUsForm*
+ */
+type ContactUsFormSliceVariation = ContactUsFormSliceDefault;
+
+/**
+ * ContactUsForm Shared Slice
+ *
+ * - **API ID**: `contact_us_form`
+ * - **Description**: ContactUsForm
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactUsFormSlice = prismic.SharedSlice<
+  "contact_us_form",
+  ContactUsFormSliceVariation
+>;
+
+/**
  * Item in *Grid → Default → Primary → items*
  */
 export interface GridSliceDefaultPrimaryItemsItem {
@@ -327,7 +383,7 @@ export interface GridSliceDefaultPrimaryItemsItem {
    * - **API ID Path**: grid.default.primary.items[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.LinkField;
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
@@ -425,7 +481,13 @@ export interface HeroSliceDefaultPrimary {
    * - **API ID Path**: hero.default.primary.buttonLink
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  buttonLink: prismic.LinkField;
+  buttonLink: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * Button Text field in *Hero → Default → Primary*
@@ -517,7 +579,13 @@ export interface HeroSliceTwoButtonsPrimary {
    * - **API ID Path**: hero.twoButtons.primary.leftButton
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  leftButton: prismic.LinkField;
+  leftButton: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * Left Button Text field in *Hero → Two Buttons → Primary*
@@ -537,7 +605,13 @@ export interface HeroSliceTwoButtonsPrimary {
    * - **API ID Path**: hero.twoButtons.primary.right_button
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  right_button: prismic.LinkField;
+  right_button: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * Right Button Text field in *Hero → Two Buttons → Primary*
@@ -730,7 +804,13 @@ export interface ImageCardsSliceDefaultPrimaryCardsItem {
    * - **API ID Path**: image_cards.default.primary.cards[].buttonLink
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  buttonLink: prismic.LinkField;
+  buttonLink: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * Button Text field in *ImageCards → Default → Primary → Cards*
@@ -775,7 +855,13 @@ export interface ImageCardsSlicePortraitPrimaryCardsItem {
    * - **API ID Path**: image_cards.portrait.primary.cards[].buttonLink
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  buttonLink: prismic.LinkField;
+  buttonLink: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * Button Text field in *ImageCards → portrait → Primary → Cards*
@@ -820,7 +906,13 @@ export interface ImageCardsSliceSquarePrimaryCardsItem {
    * - **API ID Path**: image_cards.square.primary.cards[].buttonLink
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  buttonLink: prismic.LinkField;
+  buttonLink: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * Button Text field in *ImageCards → square → Primary → Cards*
@@ -989,7 +1081,7 @@ export interface NavItemSliceMenuPrimaryMenuLinksItem {
    * - **API ID Path**: nav_item.menu.primary.menu_links[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.LinkField;
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
@@ -1014,7 +1106,7 @@ export interface NavItemSliceDefaultPrimary {
    * - **API ID Path**: nav_item.default.primary.link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.LinkField;
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
@@ -1390,7 +1482,13 @@ export interface TextWithImageSliceWithButtonPrimary {
    * - **API ID Path**: text_with_image.withButton.primary.buttonLink
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  buttonLink: prismic.LinkField;
+  buttonLink: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * Button Text field in *TextWithImage → With Button → Primary*
@@ -1612,6 +1710,10 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      ContactUsFormSlice,
+      ContactUsFormSliceDefaultPrimary,
+      ContactUsFormSliceVariation,
+      ContactUsFormSliceDefault,
       GridSlice,
       GridSliceDefaultPrimaryItemsItem,
       GridSliceDefaultPrimary,

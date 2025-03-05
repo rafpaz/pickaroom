@@ -14,7 +14,7 @@ export type GridProps = SliceComponentProps<Content.GridSlice>;
 /**
  * Component for "Grid" Slices.
  */
-const Grid = ({ slice }: GridProps): JSX.Element => {
+const Grid = ({ slice }: GridProps) => {
   return (
     <section
       data-slice-type={slice.slice_type}
