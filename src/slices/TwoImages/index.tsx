@@ -11,7 +11,7 @@ export type TwoImagesProps = SliceComponentProps<Content.TwoImagesSlice>;
 /**
  * Component for "TwoImages" Slices.
  */
-const TwoImages = ({ slice }: TwoImagesProps): JSX.Element => {
+const TwoImages = ({ slice }: TwoImagesProps) => {
   return (
     <section
       data-slice-type={slice.slice_type}

@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useState, useEffect, useActionState } from "react";
-import { Button, Textarea, addToast } from "@heroui/react";
+import { Button, Textarea } from "@heroui/react";
 import { contactUs } from "@/app/contact-us/actions";
 import { FlattenedErrors } from "@/app/contact-us/contactUsSchema";
 import FormInput from "@/components/FormInput";
@@ -18,14 +18,7 @@ const CustomForm: FC<ContactUsFormProps> = ({ source }) => {
 
   useEffect(() => {
     setErrors(JSON.parse(state?.error ?? "{}"));
-    // if (state.message) {
-    //   addToast({
-    //     title: "Success",
-    //     description: "Form submitted successfully",
-    //     timeout: 3000,
-    //     color: "success",
-    //   });
-    // }
+    console.log(state);
   }, [state]);
 
   return (

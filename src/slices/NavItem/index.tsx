@@ -20,7 +20,7 @@ export type NavItemProps = SliceComponentProps<Content.NavItemSlice>;
 /**
  * Component for "NavItem" Slices.
  */
-const NavItem = ({ slice }: NavItemProps): JSX.Element => {
+const NavItem = ({ slice }: NavItemProps) => {
   if (slice.variation === "default") {
     return (
       <NavbarItem className="text-black text-lg">

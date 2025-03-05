@@ -12,7 +12,7 @@ export async function contactUs(
   const { data, error, success } = contactUsSchema.safeParse(
     Object.fromEntries(formData.entries()),
   );
-  console.log("data:", data);
+
   if (error) {
     return {
       message: "Validation Error",
@@ -24,7 +24,7 @@ export async function contactUs(
     authorizationToken: process.env.COURIER_TOKEN,
   });
 
-  const { requestId } = await courier.send({
+  await courier.send({
     message: {
       to: {
         email: process.env.SEND_TO_EMAIL,
@@ -41,14 +41,9 @@ export async function contactUs(
     },
   });
 
-  console.log("requestId:", requestId);
   if (!success) {
     return { message: "Failed to send contact information" };
   }
 
-  try {
-    return { message: `Sent contact information` };
-  } catch (e) {
-    return { message: "Failed to send contact information" };
-  }
+  return { message: `Sent contact information` };
 }

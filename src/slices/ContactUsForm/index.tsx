@@ -22,7 +22,7 @@ const ContactUsForm: FC<ContactUsFormProps> = ({ slice }) => {
           field={slice.primary.title}
           globalClassName="text-center"
         />
-        <CustomForm />
+        <CustomForm source={slice.primary.source?.toString() ?? ""} />
       </Bounded>
     </section>
   );
