@@ -14,8 +14,8 @@ const Quote = ({ slice }: QuoteProps) => {
           <blockquote>
             <p
               className={cn(
-                "text-xl leading-tight md:text-2xl font-extralight",
-                !isFilled.keyText(slice.primary.source) && "text-center"
+                "text-xl italic leading-tight md:text-2xl font-extralight",
+                !isFilled.keyText(slice.primary.source) && "text-center",
               )}
             >
               <span className="-ml-3.5 select-none md:-ml-5">&ldquo;</span>

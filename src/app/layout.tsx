@@ -11,6 +11,7 @@ import CustomNavbar from "@/components/Navbar";
 const poppins = Poppins({
   display: "swap",
   subsets: ["latin"],
+  style: ["normal", "italic"],
   variable: "--font-poppins",
   weight: ["200", "300", "400", "500", "600", "700"],
 });

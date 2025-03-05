@@ -4,7 +4,6 @@ import { OptionalPrismicNextLink } from "@/components/OptionalPrismicNextLink";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-import CustomAnimation from "@/components/CustomAnimation";
 
 /**
  * Props for `Grid`.
@@ -21,9 +20,7 @@ const Grid = ({ slice }: GridProps) => {
       data-slice-variation={slice.variation}
     >
       <Bounded yPadding="sm" className="relative">
-        <CustomAnimation className="mb-16">
-          <PrismicRichText field={slice.primary.title} />
-        </CustomAnimation>
+        <PrismicRichText field={slice.primary.title} />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {slice.primary.items.map((item, index) => (
             <OptionalPrismicNextLink key={index} field={item.link}>
