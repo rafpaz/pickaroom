@@ -7,6 +7,7 @@ import { Providers } from "./providers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import CustomNavbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   display: "swap",
@@ -25,6 +26,7 @@ export default async function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <Header />
           {children}
+          <CustomFooter />
           <PrismicPreview repositoryName={repositoryName} />
           <SpeedInsights />
           <Analytics />
@@ -39,4 +41,11 @@ async function Header() {
   const navigation = await client.getSingle("global_nav");
 
   return <CustomNavbar {...navigation} />;
+}
+
+async function CustomFooter() {
+  const client = createClient();
+  const footer = await client.getSingle("footer");
+
+  return <Footer {...footer.data} />;
 }
