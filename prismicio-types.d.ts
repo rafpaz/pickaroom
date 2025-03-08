@@ -56,7 +56,7 @@ interface FooterDocumentData {
   social_links: prismic.GroupField<Simplify<FooterDocumentDataSocialLinksItem>>;
 
   /**
-   * Logo field in *Footer*
+   * Right Side Image field in *Footer*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -65,6 +65,41 @@ interface FooterDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo: prismic.ImageField<never>;
+
+  /**
+   * Right Side Text field in *Footer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.right_side_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  right_side_text: prismic.RichTextField;
+
+  /**
+   * Bottom Text field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.bottom_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bottom_text: prismic.KeyTextField;
+
+  /**
+   * Bottom Links field in *Footer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.bottom_links
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  bottom_links: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
 }
 
 /**
