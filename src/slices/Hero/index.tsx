@@ -74,7 +74,7 @@ const Hero = ({ slice }: HeroProps) => {
                 "justify-items-start items-end",
             )}
           >
-            <div className="max-w-lg text-left text-black">
+            <div className="text-left text-black">
               <ConditionalWrap
                 if={slice.primary.animated_title}
                 with={CustomAnimation}
