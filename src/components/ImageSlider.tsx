@@ -61,7 +61,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ beforeImage, afterImage }) => {
   }, []);
 
   return (
-    <div className={"m-auto px-6 w-full max-w-7xl"}>
+    <div className={"m-auto px-6 w-full max-w-7xl rounded"}>
       <div
         ref={containerRef}
         className="relative w-full h-[600px] overflow-hidden select-none"
