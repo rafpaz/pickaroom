@@ -251,6 +251,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | BeforeAfterImageSlice
   | ContactUsFormSlice
   | TwoImagesSlice
   | GridSlice
@@ -380,6 +381,71 @@ export type AllDocumentTypes =
   | HomepageDocument
   | PageDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *BeforeAfterImage → Default → Primary*
+ */
+export interface BeforeAfterImageSliceDefaultPrimary {
+  /**
+   * Title field in *BeforeAfterImage → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: before_after_image.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Before Image field in *BeforeAfterImage → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: before_after_image.default.primary.before_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  before_image: prismic.ImageField<never>;
+
+  /**
+   * After Image field in *BeforeAfterImage → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: before_after_image.default.primary.after_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  after_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for BeforeAfterImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BeforeAfterImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BeforeAfterImageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BeforeAfterImage*
+ */
+type BeforeAfterImageSliceVariation = BeforeAfterImageSliceDefault;
+
+/**
+ * BeforeAfterImage Shared Slice
+ *
+ * - **API ID**: `before_after_image`
+ * - **Description**: BeforeAfterImage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BeforeAfterImageSlice = prismic.SharedSlice<
+  "before_after_image",
+  BeforeAfterImageSliceVariation
+>;
 
 /**
  * Primary content in *ContactUsForm → Default → Primary*
@@ -1828,6 +1894,10 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      BeforeAfterImageSlice,
+      BeforeAfterImageSliceDefaultPrimary,
+      BeforeAfterImageSliceVariation,
+      BeforeAfterImageSliceDefault,
       ContactUsFormSlice,
       ContactUsFormSliceDefaultPrimary,
       ContactUsFormSliceVariation,
