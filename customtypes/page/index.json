@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "before_after_image": {
+              "type": "SharedSlice"
+            },
             "contact_us_form": {
               "type": "SharedSlice"
             },

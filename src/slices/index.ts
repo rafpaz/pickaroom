@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  before_after_image: dynamic(() => import("./BeforeAfterImage")),
   contact_us_form: dynamic(() => import("./ContactUsForm")),
   grid: dynamic(() => import("./Grid")),
   hero: dynamic(() => import("./Hero")),
