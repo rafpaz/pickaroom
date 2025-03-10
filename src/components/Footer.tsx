@@ -12,8 +12,8 @@ const Footer = ({
 }: FooterDocumentData) => {
   return (
     <footer className="bg-gray-100 py-8">
-      <div className="container mx-auto px-10">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="container mx-auto px-6 w-full max-w-7xl">
+        <div className="flex flex-col md:flex-row justify-between">
           <div className="flex flex-col justify-between">
             <PrismicRichText field={left_side_text} />
             <div className="flex gap-4 mt-4">
@@ -32,13 +32,13 @@ const Footer = ({
             <PrismicNextImage field={logo} className="mt-8" />
           </div>
         </div>
-        <div className="flex mt-8 text-sm">
-          <div className={"mr-12"}>{bottom_text}</div>
+        <div className="flex mt-8 text-sm flex-row max-w-lg gap-4 max-[467px]:flex-col">
+          <div className={"flex-1"}>{bottom_text}</div>
           {bottom_links.map((link) => (
             <PrismicNextLink
               field={link}
               key={link.text}
-              className="ml-4 underline"
+              className="underline"
             />
           ))}
         </div>
