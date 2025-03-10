@@ -27,7 +27,7 @@ const CustomForm: FC<ContactUsFormProps> = ({ source }) => {
       action={formAction}
     >
       <input type="hidden" name="source" value={source} />
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-10 p-4">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-10">
         <FormInput
           label="First Name"
           name="firstName"
