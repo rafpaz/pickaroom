@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect, FC } from "react";
 import { ImageField } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
 
 interface ImageSliderProps {
   beforeImage: ImageField;
@@ -65,9 +66,8 @@ const ImageSlider: FC<ImageSliderProps> = ({ beforeImage, afterImage }) => {
       className="relative w-full h-[600px] overflow-hidden"
     >
       {/* Background image (Before) */}
-      <img
-        src={typeof beforeImage === "string" ? beforeImage : beforeImage.url}
-        alt="Before"
+      <PrismicNextImage
+        field={beforeImage}
         className="absolute top-0 left-0 w-full h-full object-cover"
       />
       {/* After image using clip-path to reveal the left portion */}
@@ -75,9 +75,8 @@ const ImageSlider: FC<ImageSliderProps> = ({ beforeImage, afterImage }) => {
         className="absolute top-0 left-0 w-full h-full overflow-hidden"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
-        <img
-          src={typeof afterImage === "string" ? afterImage : afterImage.url}
-          alt="After"
+        <PrismicNextImage
+          field={afterImage}
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
       </div>
