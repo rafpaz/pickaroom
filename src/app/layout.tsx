@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import CustomNavbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 const poppins = Poppins({
   display: "swap",
@@ -27,6 +28,7 @@ export default async function RootLayout({
           <Header />
           {children}
           <CustomFooter />
+          <CookieConsent />
           <PrismicPreview repositoryName={repositoryName} />
           <SpeedInsights />
           <Analytics />
